@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap');
+:root {
+   --radius10: 10px;
+   --radius5: 5px;
+   --radius3: 3px;
+   --color1: #7048e8;
+   --color1H: #6741d9;
+   --color1S: #7048e888;
+   --color-black: #343a40;
+   --color-red: #fa5252;
+   --trans: all 0.3s ease;
+   --fw400: 400;
+   --fw500: 500;
+   --letter-space-0: 0px;
+}
+* {
+   margin: 0;
+   padding: 0;
+   font-family: inherit;
+   box-sizing: border-box;
+   color: inherit;
+}
+
+body {
+   font-family: 'Rubik', sans-serif;
+   color: black;
+}
+
+.flex {
+   display: flex;
+}
+
+.flex-center {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.container {
+   width: 100%;
+   padding: 0 30px;
+   max-width: 1600px;
+   margin: auto;
+}
+
+.btn-sm {
+   font-size: 1rem;
+   font-weight: var(--fw500);
+   background-color: white;
+   padding: 0.3rem 0.5rem;
+   border-radius: var(--radius3);
+   cursor: pointer;
+   transition: var(--trans);
+   border: none;
+}
+
+.btn-sm:hover {
+   background-color: rgb(245, 245, 245);
+}
+
+/* NAV Bar */
+nav {
+   background-color: black;
+}
+
+.nav-container {
+   justify-content: space-between;
+   padding: 1rem 1rem;
+}
+
+nav #logo {
+   height: 2rem;
+}
+
+#dashboard {
+   margin-top: 1.5rem;
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   gap: 2.5rem;
+}
+
+#dashboard > div {
+   border: 2px solid black;
+   padding: 1.5rem;
+   position: relative;
+   border-radius: var(--radius5);
+}
+
+#dashboard > div > span {
+   font-size: 2rem;
+   font-weight: 600;
+   display: block;
+   margin-bottom: 1rem;
+}
+#dashboard > div > small {
+   font-size: 1.7rem;
+   font-weight: 500;
+   color: #1c7ed6;
+}
+
+#dashboard ion-icon {
+   position: absolute;
+   top: 50%;
+   transform: translate(0, -50%);
+   right: 0;
+   font-size: 3.5rem;
+   padding: 1rem;
+   stroke-width: 0.2rem;
+   color: #343a40;
+}
