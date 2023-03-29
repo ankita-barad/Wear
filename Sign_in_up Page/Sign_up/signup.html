@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JOIN</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+      #main {
+        width: 30%;
+        margin: auto;
+        border: 1px solid black;
+        padding-bottom: 30px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+      }
+      #threebuttons {
+        display: flex;
+        justify-content: space-between;
+      }
+      #threebuttons div {
+        border: 1px solid black;
+      }
+      #form input {
+        /* width: 100%; */
+        /* height: 40px; */
+      }
+      #cont {
+        padding: 0px 80px 0px 80px;
+      }
+      #details {
+        padding: 0px 35px 0px 35px;
+      }
+      #inp1 input {
+        width: 100%;
+        height: 40px;
+      }
+      .check {
+        width: 25px;
+      }
+      #dob {
+        width: 100%;
+        margin: auto;
+      }
+      #date {
+        width: 100%;
+        height: 35px;
+      }
+      #month {
+        width: 150%;
+        height: 35px;
+      }
+      #year {
+        width: 100%;
+        height: 35px;
+      }
+      .social {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <div id="details">
+        <div>
+          <div style="display: flex; justify-content: space-around">
+            <div><h3>JOIN</h3></div>
+            <div>
+              <a href="signin.html" style="text-decoration: none; color: black"
+                ><h3>SIGNIN</h3></a
+              >
+            </div>
+          </div>
+        </div>
+        <div style="text-align: center">
+          <h2>SIGN UP WITH...</h2>
+        </div>
+        <div id="threebuttons">
+          <div class="social">
+            <img src="" alt="" />
+            <h3>GOOGLE</h3>
+          </div>
+          <div class="social">
+            <img
+              src="file:///C:/Users/USER/Downloads/apple-svgrepo-com%20(1).svg"
+              alt=""
+            />
+            <h3>APPLE</h3>
+          </div>
+          <div class="social">
+            <img src="" alt="" />
+            <h3>FACEBOOK</h3>
+          </div>
+        </div>
+        <div>
+          <p>
+            Signing up with social is super quick. No extra passwords to
+            remember - no brain fail. Don't worry, we'd never share any of your
+            data or post anything on your behalf #notevil
+          </p>
+        </div>
+      </div>
+
+      <div id="cont">
+        <form id="form">
+          <div id="inp1">
+            <div>
+              <div>
+                <label for="email">EMAIL ADDRESS:</label>
+              </div>
+              <input type="email" id="email" />
+              <div></div>
+            </div>
+            <div>
+              <div>
+                <label for="firstname">FIRST NAME:</label>
+              </div>
+              <div><input type="text" id="firstname" /></div>
+            </div>
+            <div>
+              <div><label for="lastname">LAST NAME:</label></div>
+              <div><input type="text" id="lastname" /></div>
+            </div>
+            <div>
+              <div><label for="password">PASSWORD:</label></div>
+              <div><input type="text" id="password" /></div>
+            </div>
+            <div>
+              <div>
+                <label for="password">Must be 10 or more characters</label>
+              </div>
+              <div><label for="dob">DATE OF BIRTH:</label></div>
+            </div>
+            <div>
+              <div
+                id="dob"
+                style="display: flex; justify-content: space-between"
+              >
+                <div>
+                  <select name="day" id="date">
+                    <option value="">Day</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                  </select>
+                </div>
+                <div>
+                  <select name="month" id="month">
+                    <option value="">Month</option>
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                  </select>
+                </div>
+                <div>
+                  <select name="year" id="year">
+                    <option value="">Year</option>
+                    <option value="2007">2007</option>
+                    <option value="2006">2006</option>
+                    <option value="2005">2005</option>
+                    <option value="2004">2004</option>
+                    <option value="2003">2003</option>
+                    <option value="2002">2002</option>
+                    <option value="2001">2001</option>
+                    <option value="2000">2000</option>
+                    <option value="1999">1999</option>
+                    <option value="1998">1998</option>
+                    <option value="1997">1997</option>
+                    <option value="1996">1996</option>
+                    <option value="1995">1995</option>
+                    <option value="1994">1994</option>
+                    <option value="1993">1993</option>
+                    <option value="1992">1992</option>
+                    <option value="1991">1991</option>
+                    <option value="1990">1990</option>
+                    <option value="1989">1989</option>
+                    <option value="1988">1988</option>
+                    <option value="1987">1987</option>
+                    <option value="1986">1986</option>
+                    <option value="1985">1985</option>
+                    <option value="1984">1984</option>
+                    <option value="1983">1983</option>
+                    <option value="1982">1982</option>
+                    <option value="1981">1981</option>
+                    <option value="1980">1980</option>
+                    <option value="1979">1979</option>
+                    <option value="1978">1978</option>
+                    <option value="1977">1977</option>
+                    <option value="1976">1976</option>
+                    <option value="1975">1975</option>
+                    <option value="1974">1974</option>
+                    <option value="1973">1973</option>
+                    <option value="1972">1972</option>
+                    <option value="1971">1971</option>
+                    <option value="1970">1970</option>
+                    <option value="1969">1969</option>
+                    <option value="1968">1968</option>
+                    <option value="1967">1967</option>
+                    <option value="1966">1966</option>
+                    <option value="1965">1965</option>
+                    <option value="1964">1964</option>
+                    <option value="1963">1963</option>
+                    <option value="1962">1962</option>
+                    <option value="1961">1961</option>
+                    <option value="1960">1960</option>
+                    <option value="1959">1959</option>
+                    <option value="1958">1958</option>
+                  </select>
+                </div>
+              </div>
+              <div>
+                <h5>You need to be 16 or over to use WEAR</h5>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h4>MOSTLY INTRESTED IN:</h4>
+            <input type="radio" name="preference" />
+            <label for="mens">MEN'S WEAR</label>
+            <input type="radio" name="preference" />
+            <label for="womens">WOMEN'S WEAR</label>
+          </div>
+          <div>
+            <div><h2>CONTACT PREFERENCES</h2></div>
+            <div style="display: flex">
+              <div>
+                <span>Tell us which emails you’d like:</span>
+              </div>
+              <div>
+                <button>SELECT ALL</button>
+              </div>
+            </div>
+            <div>
+              <div style="display: flex; justify-content: space-between">
+                <label for="discounts"><h4>Discount and Sales</h4></label>
+                <input type="checkbox" name="discounts" class="check" />
+              </div>
+              <div style="display: flex; justify-content: space-between">
+                <label for="stuffs"><h4>New Stuffs</h4></label>
+                <input type="checkbox" name="stuffs" class="check" />
+              </div>
+              <div style="display: flex; justify-content: space-between">
+                <label for="exclusives"><h4>Your Exclusives</h4></label>
+                <input type="checkbox" name="exclusives" class="check" />
+              </div>
+              <div style="display: flex; justify-content: space-between">
+                <label for="partners"><h4>WEAR Partners</h4></label>
+                <input type="checkbox" name="partners" class="check" />
+              </div>
+            </div>
+            <div>
+              <button style="width: 100%; height: 35px">JOIN WEAR</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script src=""></script>
+</html>
