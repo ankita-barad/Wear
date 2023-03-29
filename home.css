@@ -1,0 +1,29 @@
+.asos-nav {
+    background-color: #000;
+    color: #fff;
+    font-size: 1.2rem;
+  }
+  
+  .asos-nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .asos-nav li {
+    margin: 0 1rem;
+  }
+  
+  .asos-nav a {
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .asos-nav a:hover {
+    color: #ccc;
+  }
+  
