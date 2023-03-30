@@ -37,7 +37,8 @@ function displayProductData(data) {
         `https://64230bad001cb9fc2036bd2f.mockapi.io/products/${id}`
       );
       let data = await res.json();
-      gitlocalStorage.setItem("detailPage", JSON.stringify([data]));
+      localStorage.setItem("detailPage", JSON.stringify([data]));
+      window.location.href = "../ProductDetail_page/product_detail.html";
     });
 
     let Name_div = document.createElement("div");
