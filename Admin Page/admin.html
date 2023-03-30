@@ -6,53 +6,396 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Admin Page/admin.css">
-    <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <title>Admin Page</title>
 </head>
 
 <body>
     <nav>
         <div class="nav-container container flex">
-            <img id="logo" src="https://i.postimg.cc/c1BcXR2M/logo-1.png" alt="logo"> <button
-                class="btn-sm">Dashboard</button>
+            <img id="logo" src="https://i.postimg.cc/c1BcXR2M/logo-1.png" alt="logo">
         </div>
-
 
     </nav>
-    <div class="container" id="dashboard">
-        <div class="total-products">
-            <span>Total Products</span>
-            <small>113</small>
-            <ion-icon name="shirt-sharp"></ion-icon>
+
+    <div class="container">
+        <div id="admin-links">
+            <div class="active" id="dashoard-btn">
+                <i class="ri-dashboard-fill"></i>
+                <span>Dashboard</span>
+                <small class="hide">Dashboard</small>
+            </div>
+            <div id="all-products-btn">
+                <i class="ri-t-shirt-2-fill"></i>
+                <span>All Products</span>
+                <small class="hide">Customers</small>
+            </div>
+            <div id="customers-btn">
+                <i class="ri-user-fill"></i>
+                <span>Customers</span>
+                <small class="hide">Customers</small>
+            </div>
+            <div id="orders-btn">
+                <i class="ri-shopping-cart-fill"></i>
+                <span>Orders</span>
+                <small class="hide">Orders</small>
+            </div>
+            <div id="add-items-btn">
+                <i class="ri-add-box-fill"></i>
+                <span>Add Items</span>
+                <small class="hide">Add Items</small>
+            </div>
+            <div id="deleted-items-btn">
+                <i class="ri-delete-bin-fill"></i>
+                <span>Recycle Bin</span>
+                <small class="hide">Recycle Bin</small>
+            </div>
         </div>
-        <div class="total-customers">
-            <span>Total Customers</span>
-            <small>12</small>
-            <ion-icon name="people-sharp"></ion-icon>
+    </div>
+
+    <div class="container admin-box" id="admin-box-dashboard">
+        <i class="ri-menu-line menu-btn"></i>
+        <div>
+            <div>
+                <div class="card" id="total-items">
+                    <div class="icon-box">
+                        <i class="ri-t-shirt-2-line"></i>
+                    </div>
+                    <div>
+                        <h1>Total Items</h1>
+                        <span>1289</span>
+                    </div>
+                </div>
+                <div class="card" id="total-customers">
+                    <div class="icon-box">
+                        <i class="ri-user-line"></i>
+                    </div>
+                    <div>
+                        <h1>Total Customers</h1>
+                        <span>128</span>
+                    </div>
+                </div>
+                <div class="card" id="total-orders">
+                    <div class="icon-box">
+                        <i class="ri-shopping-cart-2-line"></i>
+                    </div>
+                    <div>
+                        <h1>Total Orders</h1>
+                        <span>109</span>
+                    </div>
+                </div>
+                <div class="card" id="total-revinue">
+                    <div class="icon-box">
+                        <i class="ri-money-dollar-circle-line"></i>
+                    </div>
+                    <div>
+                        <h1>Total Revinue</h1>
+                        <span>$1889.5</span>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="card" id="admin-members">
+                    <div class="icon-box">
+                        <i class="ri-user-settings-line"></i>
+                    </div>
+
+                    <div>
+                        <h1>Admin Members</h1>
+                        <div id="admin-list">
+                            <div class="admin-details">
+                                <div>
+                                    <p class="name">Anjali Gautam (FW25_186)</p>
+                                    <p class="email">email : anjaligautam31051996@gmail.com</p>
+                                    <p class="mobile">mobile : +91 9634466949</p>
+                                </div>
+                                <img class="profile"
+                                    src="https://ca.slack-edge.com/T04RMV7PJAC-U04R55G5WR4-fd32f40797f1-512"
+                                    alt="error">
+                            </div>
+
+                            <div class="admin-details">
+                                <div>
+                                    <p class="name">Ankita Barad (FW25_253)</p>
+                                    <p class="email">email : ankitabarad2111@gmail.com</p>
+                                    <p class="mobile">mobile : +91 9611337085</p>
+                                </div>
+                                <img class="profile"
+                                    src="https://ca.slack-edge.com/T04RMV7PJAC-U04RC284YV9-e55ea82d6466-512"
+                                    alt="error">
+                            </div>
+                            <div class="admin-details">
+                                <div>
+                                    <p class="name">sheik (FW25_240)</p>
+                                    <p class="email">email : sheikdashleem@gmail.com</p>
+                                    <p class="mobile">mobile : +91 9080427174</p>
+                                </div>
+                                <img class="profile"
+                                    src="https://ca.slack-edge.com/T04RMV7PJAC-U04RB721XNX-574d4d9387c1-512"
+                                    alt="error">
+                            </div>
+                            <div class="admin-details">
+                                <div>
+                                    <p class="name">Arpit Jana (FW24_227)</p>
+                                    <p class="email">email : arpitjana2103@gmail.com</p>
+                                    <p class="mobile">mobile : +91 7047809373</p>
+                                </div>
+                                <img class="profile"
+                                    src="https://ca.slack-edge.com/T04RMV7PJAC-U04S23G3X7A-f197b11a7165-512"
+                                    alt="error">
+                            </div>
+
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="total-members">
-            <span>Total Members</span>
-            <small>4</small>
-            <ion-icon name="person-sharp"></ion-icon>
-        </div>
-        <div class="total-orders">
-            <span>Total Orders</span>
-            <small>54</small>
-            <ion-icon name="cart-sharp"></ion-icon>
-        </div>
-        <div class="total-revinue">
-            <span>Total Revinue</span>
-            <small>$124.5</small>
-            <ion-icon name="wallet-sharp"></ion-icon>
-        </div>
-        <div class="add-items">
-            <span>Add Items</span>
-            <ion-icon name="duplicate-sharp"></ion-icon>
-        </div>
-        <div class="deleted-items">
-            <span>Deleted Items</span>
-            <small>5</small>
-            <ion-icon name="trash-sharp"></ion-icon>
+
+
+    </div>
+
+    <div class="container admin-box" id="admin-box-all-products">
+        <i class="ri-menu-line menu-btn"></i>
+        <div class="card-list">
+            <div class="prod-card">
+                <img src="https://i.postimg.cc/PrqKq8r5/22536406-1-black.jpg" alt="">
+                <div class="info-box">
+                    <h2 class="title">ASOS DESIGN slim mom jeans in clean black</h2>
+                    <table>
+                        <tr>
+                            <td>Price</td>
+                            <td>: $90</td>
+                        </tr>
+                        <tr>
+                            <td>Discount</td>
+                            <td>: 38%</td>
+                        </tr>
+                        <tr>
+                            <td>Type</td>
+                            <td>: Jeans</td>
+                        </tr>
+                        <tr>
+                            <td>Category</td>
+                            <td>: Women</td>
+                        </tr>
+                        <tr>
+                            <td>Color</td>
+                            <td>: Black</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+
+            <div class="prod-card">
+                <img src="https://i.postimg.cc/PrqKq8r5/22536406-1-black.jpg" alt="">
+                <div class="info-box">
+                    <h2 class="title">ASOS DESIGN slim mom jeans in clean black</h2>
+                    <table>
+                        <tr>
+                            <td>Price</td>
+                            <td>: $90</td>
+                        </tr>
+                        <tr>
+                            <td>Discount</td>
+                            <td>: 38%</td>
+                        </tr>
+                        <tr>
+                            <td>Type</td>
+                            <td>: Jeans</td>
+                        </tr>
+                        <tr>
+                            <td>Category</td>
+                            <td>: Women</td>
+                        </tr>
+                        <tr>
+                            <td>Color</td>
+                            <td>: Black</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+
+            <div class="prod-card">
+                <img src="https://i.postimg.cc/PrqKq8r5/22536406-1-black.jpg" alt="">
+                <div class="info-box">
+                    <h2 class="title">ASOS DESIGN slim mom jeans in clean black</h2>
+                    <table>
+                        <tr>
+                            <td>Price</td>
+                            <td>: $90</td>
+                        </tr>
+                        <tr>
+                            <td>Discount</td>
+                            <td>: 38%</td>
+                        </tr>
+                        <tr>
+                            <td>Type</td>
+                            <td>: Jeans</td>
+                        </tr>
+                        <tr>
+                            <td>Category</td>
+                            <td>: Women</td>
+                        </tr>
+                        <tr>
+                            <td>Color</td>
+                            <td>: Black</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+            <div class="prod-card">
+                <img src="https://i.postimg.cc/PrqKq8r5/22536406-1-black.jpg" alt="">
+                <div class="info-box">
+                    <h2 class="title">ASOS DESIGN slim mom jeans in clean black</h2>
+                    <table>
+                        <tr>
+                            <td>Price</td>
+                            <td>: $90</td>
+                        </tr>
+                        <tr>
+                            <td>Discount</td>
+                            <td>: 38%</td>
+                        </tr>
+                        <tr>
+                            <td>Type</td>
+                            <td>: Jeans</td>
+                        </tr>
+                        <tr>
+                            <td>Category</td>
+                            <td>: Women</td>
+                        </tr>
+                        <tr>
+                            <td>Color</td>
+                            <td>: Black</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+            <div class="prod-card">
+                <img src="https://i.postimg.cc/PrqKq8r5/22536406-1-black.jpg" alt="">
+                <div class="info-box">
+                    <h2 class="title">ASOS DESIGN slim mom jeans in clean black</h2>
+                    <table>
+                        <tr>
+                            <td>Price</td>
+                            <td>: $90</td>
+                        </tr>
+                        <tr>
+                            <td>Discount</td>
+                            <td>: 38%</td>
+                        </tr>
+                        <tr>
+                            <td>Type</td>
+                            <td>: Jeans</td>
+                        </tr>
+                        <tr>
+                            <td>Category</td>
+                            <td>: Women</td>
+                        </tr>
+                        <tr>
+                            <td>Color</td>
+                            <td>: Black</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+            <div class="prod-card">
+                <img src="https://i.postimg.cc/PrqKq8r5/22536406-1-black.jpg" alt="">
+                <div class="info-box">
+                    <h2 class="title">ASOS DESIGN slim mom jeans in clean black</h2>
+                    <table>
+                        <tr>
+                            <td>Price</td>
+                            <td>: $90</td>
+                        </tr>
+                        <tr>
+                            <td>Discount</td>
+                            <td>: 38%</td>
+                        </tr>
+                        <tr>
+                            <td>Type</td>
+                            <td>: Jeans</td>
+                        </tr>
+                        <tr>
+                            <td>Category</td>
+                            <td>: Women</td>
+                        </tr>
+                        <tr>
+                            <td>Color</td>
+                            <td>: Black</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+            <div class="prod-card">
+                <img src="https://i.postimg.cc/PrqKq8r5/22536406-1-black.jpg" alt="">
+                <div class="info-box">
+                    <h2 class="title">ASOS DESIGN slim mom jeans in clean black</h2>
+                    <table>
+                        <tr>
+                            <td>Price</td>
+                            <td>: $90</td>
+                        </tr>
+                        <tr>
+                            <td>Discount</td>
+                            <td>: 38%</td>
+                        </tr>
+                        <tr>
+                            <td>Type</td>
+                            <td>: Jeans</td>
+                        </tr>
+                        <tr>
+                            <td>Category</td>
+                            <td>: Women</td>
+                        </tr>
+                        <tr>
+                            <td>Color</td>
+                            <td>: Black</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+            <div class="prod-card">
+                <img src="https://i.postimg.cc/PrqKq8r5/22536406-1-black.jpg" alt="">
+                <div class="info-box">
+                    <h2 class="title">ASOS DESIGN slim mom jeans in clean black</h2>
+                    <table>
+                        <tr>
+                            <td>Price</td>
+                            <td>: $90</td>
+                        </tr>
+                        <tr>
+                            <td>Discount</td>
+                            <td>: 38%</td>
+                        </tr>
+                        <tr>
+                            <td>Type</td>
+                            <td>: Jeans</td>
+                        </tr>
+                        <tr>
+                            <td>Category</td>
+                            <td>: Women</td>
+                        </tr>
+                        <tr>
+                            <td>Color</td>
+                            <td>: Black</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+
         </div>
 
     </div>
