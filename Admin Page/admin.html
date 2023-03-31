@@ -13,10 +13,12 @@
 <body>
     <nav>
         <div class="nav-container container flex">
-            <img id="logo" src="c:\Users\dell\Desktop\https://i.postimg.cc/c1BcXR2M/logo-1.png" alt="logo">
+            <img id="logo" src="https://i.postimg.cc/c1BcXR2M/logo-1.png" alt="logo">
         </div>
 
     </nav>
+
+    <!-- SIDE MENU -->
 
     <div class="container">
         <div id="admin-links">
@@ -53,8 +55,13 @@
         </div>
     </div>
 
-    <div class="container admin-box" id="admin-box-dashboard">
-        <i class="ri-menu-line menu-btn"></i>
+    <!-- DASH BOARD -->
+
+    <div class="container  admin-box" id="admin-box-dashboard">
+        <div class="heading">
+            <i class="ri-menu-line menu-btn"></i>
+            <h1>Dashboard</h1>
+        </div>
         <div>
             <div>
                 <div class="card" id="total-items">
@@ -158,247 +165,465 @@
 
     </div>
 
-    <div class="container admin-box" id="admin-box-all-products">
-        <i class="ri-menu-line menu-btn"></i>
-        <div class="card-list">
-            <div class="prod-card">
-                <img src="https://i.postimg.cc/PrqKq8r5/22536406-1-black.jpg" alt="">
-                <div class="info-box">
-                    <h2 class="title">ASOS DESIGN slim mom jeans in clean black</h2>
-                    <table>
-                        <tr>
-                            <td>Price</td>
-                            <td>: $90</td>
-                        </tr>
-                        <tr>
-                            <td>Discount</td>
-                            <td>: 38%</td>
-                        </tr>
-                        <tr>
-                            <td>Type</td>
-                            <td>: Jeans</td>
-                        </tr>
-                        <tr>
-                            <td>Category</td>
-                            <td>: Women</td>
-                        </tr>
-                        <tr>
-                            <td>Color</td>
-                            <td>: Black</td>
-                        </tr>
-                    </table>
+    <!-- ALL PRODUCTS -->
 
-                </div>
+    <div class="container  admin-box" id="admin-box-all-products">
+        <div class="heading">
+            <i class="ri-menu-line menu-btn"></i>
+            <h1>All Products</h1>
+        </div>
+
+        <div class="search-sort-filter col-2">
+            <div class="search-container">
+                <form>
+                    <input type="text" placeholder="search">
+                    <button>search</button>
+                </form>
             </div>
-
-            <div class="prod-card">
-                <img src="https://i.postimg.cc/PrqKq8r5/22536406-1-black.jpg" alt="">
-                <div class="info-box">
-                    <h2 class="title">ASOS DESIGN slim mom jeans in clean black</h2>
-                    <table>
-                        <tr>
-                            <td>Price</td>
-                            <td>: $90</td>
-                        </tr>
-                        <tr>
-                            <td>Discount</td>
-                            <td>: 38%</td>
-                        </tr>
-                        <tr>
-                            <td>Type</td>
-                            <td>: Jeans</td>
-                        </tr>
-                        <tr>
-                            <td>Category</td>
-                            <td>: Women</td>
-                        </tr>
-                        <tr>
-                            <td>Color</td>
-                            <td>: Black</td>
-                        </tr>
-                    </table>
-
+            <div class="col-3">
+                <div class="filter-container filter-by-category">
+                    <select>
+                        <option value="">-- By Category --</option>
+                        <option value="men">Category : Men</option>
+                        <option value="women">Category : Women</option>
+                    </select>
                 </div>
-            </div>
-
-            <div class="prod-card">
-                <img src="https://i.postimg.cc/PrqKq8r5/22536406-1-black.jpg" alt="">
-                <div class="info-box">
-                    <h2 class="title">ASOS DESIGN slim mom jeans in clean black</h2>
-                    <table>
-                        <tr>
-                            <td>Price</td>
-                            <td>: $90</td>
-                        </tr>
-                        <tr>
-                            <td>Discount</td>
-                            <td>: 38%</td>
-                        </tr>
-                        <tr>
-                            <td>Type</td>
-                            <td>: Jeans</td>
-                        </tr>
-                        <tr>
-                            <td>Category</td>
-                            <td>: Women</td>
-                        </tr>
-                        <tr>
-                            <td>Color</td>
-                            <td>: Black</td>
-                        </tr>
-                    </table>
-
+                <div class="filter-container filter-by-type">
+                    <select>
+                        <option value="">-- By Type --</option>
+                        <option value="jeans">Type : Jeans</option>
+                        <option value="sneakers">Type : Sneakers</option>
+                    </select>
                 </div>
-            </div>
-            <div class="prod-card">
-                <img src="https://i.postimg.cc/PrqKq8r5/22536406-1-black.jpg" alt="">
-                <div class="info-box">
-                    <h2 class="title">ASOS DESIGN slim mom jeans in clean black</h2>
-                    <table>
-                        <tr>
-                            <td>Price</td>
-                            <td>: $90</td>
-                        </tr>
-                        <tr>
-                            <td>Discount</td>
-                            <td>: 38%</td>
-                        </tr>
-                        <tr>
-                            <td>Type</td>
-                            <td>: Jeans</td>
-                        </tr>
-                        <tr>
-                            <td>Category</td>
-                            <td>: Women</td>
-                        </tr>
-                        <tr>
-                            <td>Color</td>
-                            <td>: Black</td>
-                        </tr>
-                    </table>
-
-                </div>
-            </div>
-            <div class="prod-card">
-                <img src="https://i.postimg.cc/PrqKq8r5/22536406-1-black.jpg" alt="">
-                <div class="info-box">
-                    <h2 class="title">ASOS DESIGN slim mom jeans in clean black</h2>
-                    <table>
-                        <tr>
-                            <td>Price</td>
-                            <td>: $90</td>
-                        </tr>
-                        <tr>
-                            <td>Discount</td>
-                            <td>: 38%</td>
-                        </tr>
-                        <tr>
-                            <td>Type</td>
-                            <td>: Jeans</td>
-                        </tr>
-                        <tr>
-                            <td>Category</td>
-                            <td>: Women</td>
-                        </tr>
-                        <tr>
-                            <td>Color</td>
-                            <td>: Black</td>
-                        </tr>
-                    </table>
-
-                </div>
-            </div>
-            <div class="prod-card">
-                <img src="https://i.postimg.cc/PrqKq8r5/22536406-1-black.jpg" alt="">
-                <div class="info-box">
-                    <h2 class="title">ASOS DESIGN slim mom jeans in clean black</h2>
-                    <table>
-                        <tr>
-                            <td>Price</td>
-                            <td>: $90</td>
-                        </tr>
-                        <tr>
-                            <td>Discount</td>
-                            <td>: 38%</td>
-                        </tr>
-                        <tr>
-                            <td>Type</td>
-                            <td>: Jeans</td>
-                        </tr>
-                        <tr>
-                            <td>Category</td>
-                            <td>: Women</td>
-                        </tr>
-                        <tr>
-                            <td>Color</td>
-                            <td>: Black</td>
-                        </tr>
-                    </table>
-
-                </div>
-            </div>
-            <div class="prod-card">
-                <img src="https://i.postimg.cc/PrqKq8r5/22536406-1-black.jpg" alt="">
-                <div class="info-box">
-                    <h2 class="title">ASOS DESIGN slim mom jeans in clean black</h2>
-                    <table>
-                        <tr>
-                            <td>Price</td>
-                            <td>: $90</td>
-                        </tr>
-                        <tr>
-                            <td>Discount</td>
-                            <td>: 38%</td>
-                        </tr>
-                        <tr>
-                            <td>Type</td>
-                            <td>: Jeans</td>
-                        </tr>
-                        <tr>
-                            <td>Category</td>
-                            <td>: Women</td>
-                        </tr>
-                        <tr>
-                            <td>Color</td>
-                            <td>: Black</td>
-                        </tr>
-                    </table>
-
-                </div>
-            </div>
-            <div class="prod-card">
-                <img src="https://i.postimg.cc/PrqKq8r5/22536406-1-black.jpg" alt="">
-                <div class="info-box">
-                    <h2 class="title">ASOS DESIGN slim mom jeans in clean black</h2>
-                    <table>
-                        <tr>
-                            <td>Price</td>
-                            <td>: $90</td>
-                        </tr>
-                        <tr>
-                            <td>Discount</td>
-                            <td>: 38%</td>
-                        </tr>
-                        <tr>
-                            <td>Type</td>
-                            <td>: Jeans</td>
-                        </tr>
-                        <tr>
-                            <td>Category</td>
-                            <td>: Women</td>
-                        </tr>
-                        <tr>
-                            <td>Color</td>
-                            <td>: Black</td>
-                        </tr>
-                    </table>
-
+                <div class="sort-container sort-by-price">
+                    <select>
+                        <option value="">-- By Price --</option>
+                        <option value="l2h">Price : low to high</option>
+                        <option value="h2l">Price : high to low</option>
+                    </select>
                 </div>
             </div>
 
         </div>
+        <div class="card-list">
+            <div class="prod-card">
+                <div class="prod-details">
+                    <img src="https://i.postimg.cc/PrqKq8r5/22536406-1-black.jpg" alt="">
+                    <div class="info-box">
+                        <h2 class="title">001 : ASOS DESIGN slim mom jeans in clean black</h2>
+                        <table>
+                            <tr>
+                                <td>Price</td>
+                                <td>: $90</td>
+                            </tr>
+                            <tr>
+                                <td>Discount</td>
+                                <td>: 38%</td>
+                            </tr>
+                            <tr>
+                                <td>Rating</td>
+                                <td>: 4.8</td>
+                            </tr>
+                            <tr>
+                                <td>Type</td>
+                                <td>: Jeans</td>
+                            </tr>
+                            <tr>
+                                <td>Category</td>
+                                <td>: Women</td>
+                            </tr>
+                            <tr>
+                                <td>Size</td>
+                                <td>: 2-4-8-10-12</td>
+                            </tr>
+                            <tr>
+                                <td>Color</td>
+                                <td>: Black</td>
+                            </tr>
+                        </table>
+                        <div class="prod-card-buttons">
+                            <button class="btn-sm edit-btn">Edit item</button>
+                            <button class="btn-sm delete-btn">Delete item</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="edit-prod">
+                    <form>
+                        <div class="input-field">
+                            <label>name</label>
+                            <input class="nameInp" type="text" placeholder="name">
+                        </div>
+                        <div class="col-3">
+                            <div class="input-field">
+                                <label>Type</label>
+                                <select class="type">
+                                    <option value="">--select type--</option>
+                                    <option value="jeans">Jeans</option>
+                                    <option value="sneakers">Sneakers</option>
+                                </select>
+                            </div>
+                            <div class="input-field">
+                                <label>price</label>
+                                <input class="priceInp" type="number" placeholder="price">
+                            </div>
+                            <div class="input-field">
+                                <label>Discount percentage</label>
+                                <input class="priceInp" type="number" placeholder="discount percentage">
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="col-2">
+                                <div class="input-field">
+                                    <label>Category</label>
+                                    <select class="caregory">
+                                        <option value="">--select category--</option>
+                                        <option value="men">Men</option>
+                                        <option value="women">Women</option>
+                                    </select>
+                                </div>
+                                <div class="input-field">
+                                    <label>Color</label>
+                                    <input class="colorInp" type="text" placeholder="color">
+                                </div>
+                            </div>
+                            <div class="input-field">
+                                <label>Sizes</label>
+                                <div class="check-container">
+                                    <label class="size-inp checked"><input value="US-0" type="checkbox">
+                                        <span>US-0</span>
+                                    </label>
+                                    <label class="size-inp"><input value="US-2" type="checkbox"> <span>US-2</span>
+                                    </label>
+                                    <label class="size-inp"><input value="US-4" type="checkbox"> <span>US-4</span>
+                                    </label>
+                                    <label class="size-inp checked"><input value="US-6" type="checkbox">
+                                        <span>US-6</span>
+                                    </label>
+                                    <label class="size-inp checked"><input value="US-8" type="checkbox">
+                                        <span>US-8</span>
+                                    </label>
+                                    <label class="size-inp checked"><input value="US-10" type="checkbox">
+                                        <span>US-10</span>
+                                    </label>
+                                    <label class="size-inp checked"><input value="US-12" type="checkbox">
+                                        <span>US-12</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-field">
+                            <label>Main image</label>
+                            <input class="main-imgInp" type="text" placeholder="main image link">
+                        </div>
+                        <div class="input-field">
+                            <label>Other image 1</label>
+                            <input class="other-imgInp-1" type="text" placeholder="other image link">
+                        </div>
+                        <div class="input-field">
+                            <label>Other image 2</label>
+                            <input class="other-imgInp-2" type="text" placeholder="other image link">
+                        </div>
+                        <div class="input-field">
+                            <label>Other image 3</label>
+                            <input class="other-imgInp-3" type="text" placeholder="other image link">
+                        </div>
+                        <button class="btn-sm">UPDATE</button>
+                    </form>
 
+                </div>
+
+            </div>
+        </div>
     </div>
+
+    <!-- ALL CUSTOMERS -->
+
+    <div class="container  admin-box" id="admin-box-all-customers">
+        <div class="heading">
+            <i class="ri-menu-line menu-btn"></i>
+            <h1>Customers</h1>
+        </div>
+        <div class="user-list">
+            <div class="user-card">
+                <div class="info-box">
+                    <h3 class="title">Johanna Deckow</h3>
+                    <table>
+                        <tr>
+                            <td>ID</td>
+                            <td>: 1</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>: Carey80@yahoo.com</td>
+                        </tr>
+                        <tr>
+                            <td>Address</td>
+                            <td>: West Bengal</td>
+                        </tr>
+                        <tr>
+                            <td>Phone No.</td>
+                            <td>: 962-308-0560</td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td>: AMZo6Qc8FvGNHxJ</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+            <div class="user-card">
+                <div class="info-box">
+                    <h3 class="title">Johanna Deckow</h3>
+                    <table>
+                        <tr>
+                            <td>ID</td>
+                            <td>: 1</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>: Carey80@yahoo.com</td>
+                        </tr>
+                        <tr>
+                            <td>Address</td>
+                            <td>: West Bengal</td>
+                        </tr>
+                        <tr>
+                            <td>Phone No.</td>
+                            <td>: 962-308-0560</td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td>: AMZo6Qc8FvGNHxJ</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+            <div class="user-card">
+                <div class="info-box">
+                    <h3 class="title">Johanna Deckow</h3>
+                    <table>
+                        <tr>
+                            <td>ID</td>
+                            <td>: 1</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>: Carey80@yahoo.com</td>
+                        </tr>
+                        <tr>
+                            <td>Address</td>
+                            <td>: West Bengal</td>
+                        </tr>
+                        <tr>
+                            <td>Phone No.</td>
+                            <td>: 962-308-0560</td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td>: AMZo6Qc8FvGNHxJ</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+            <div class="user-card">
+                <div class="info-box">
+                    <h3 class="title">Johanna Deckow</h3>
+                    <table>
+                        <tr>
+                            <td>ID</td>
+                            <td>: 1</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>: Carey80@yahoo.com</td>
+                        </tr>
+                        <tr>
+                            <td>Address</td>
+                            <td>: West Bengal</td>
+                        </tr>
+                        <tr>
+                            <td>Phone No.</td>
+                            <td>: 962-308-0560</td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td>: AMZo6Qc8FvGNHxJ</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+            <div class="user-card">
+                <div class="info-box">
+                    <h3 class="title">Johanna Deckow</h3>
+                    <table>
+                        <tr>
+                            <td>ID</td>
+                            <td>: 1</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>: Carey80@yahoo.com</td>
+                        </tr>
+                        <tr>
+                            <td>Address</td>
+                            <td>: West Bengal</td>
+                        </tr>
+                        <tr>
+                            <td>Phone No.</td>
+                            <td>: 962-308-0560</td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td>: AMZo6Qc8FvGNHxJ</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+            <div class="user-card">
+                <div class="info-box">
+                    <h3 class="title">Johanna Deckow</h3>
+                    <table>
+                        <tr>
+                            <td>ID</td>
+                            <td>: 1</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>: Carey80@yahoo.com</td>
+                        </tr>
+                        <tr>
+                            <td>Address</td>
+                            <td>: West Bengal</td>
+                        </tr>
+                        <tr>
+                            <td>Phone No.</td>
+                            <td>: 962-308-0560</td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td>: AMZo6Qc8FvGNHxJ</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+            <div class="user-card">
+                <div class="info-box">
+                    <h3 class="title">Johanna Deckow</h3>
+                    <table>
+                        <tr>
+                            <td>ID</td>
+                            <td>: 1</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>: Carey80@yahoo.com</td>
+                        </tr>
+                        <tr>
+                            <td>Address</td>
+                            <td>: West Bengal</td>
+                        </tr>
+                        <tr>
+                            <td>Phone No.</td>
+                            <td>: 962-308-0560</td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td>: AMZo6Qc8FvGNHxJ</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+            <div class="user-card">
+                <div class="info-box">
+                    <h3 class="title">Johanna Deckow</h3>
+                    <table>
+                        <tr>
+                            <td>ID</td>
+                            <td>: 1</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>: Carey80@yahoo.com</td>
+                        </tr>
+                        <tr>
+                            <td>Address</td>
+                            <td>: West Bengal</td>
+                        </tr>
+                        <tr>
+                            <td>Phone No.</td>
+                            <td>: 962-308-0560</td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td>: AMZo6Qc8FvGNHxJ</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ALL ORDERS -->
+    <div class="container hide admin-box" id="admin-box-all-orders">
+        <div class="heading">
+            <i class="ri-menu-line menu-btn"></i>
+            <h1>All Orders</h1>
+        </div>
+
+        <div class="order-list">
+            <div class="order-card col-2">
+                <div class="user-details">
+                    <table>
+                        <tr>
+                            <td>User ID</td>
+                            <td>: 1</td>
+                        </tr>
+                        <tr>
+                            <td>Name</td>
+                            <td>: Jeff Harly</td>
+                        </tr>
+                        <tr>
+                            <td>Address</td>
+                            <td>: West Bengal</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>: jeff123@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>Mobile No</td>
+                            <td>: 45879358744</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="item-details">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Product Id</th>
+                                <th>Image</th>
+                                <th>Category</th>
+                                <th>Type</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total Price</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>
