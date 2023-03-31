@@ -75,6 +75,11 @@
         color: white;
         background-color: black;
       }
+      @media only screen and (max-width: 800px) {
+        #main {
+          width: 90%;
+        }
+      }
     </style>
   </head>
   <body>
@@ -84,7 +89,9 @@
     <div id="main">
       <div style="display: flex; justify-content: space-around">
         <div>
-          <a href="signup.html"><h3>JOIN</h3></a>
+          <a style="text-decoration: none; color: black" href="signup.html"
+            ><h3>JOIN</h3></a
+          >
         </div>
         <div><h3>SIGN IN</h3></div>
       </div>
@@ -94,7 +101,7 @@
           <div class="formdata">
             <div><label for="email">EMAIL ADDRESS:</label></div>
 
-            <input type="email" name="email" id="email"/>
+            <input type="email" name="email" id="email" />
           </div>
           <div class="formdata">
             <div><label for="password">PASSWORD:</label></div>
@@ -149,4 +156,5 @@
       </div>
     </div>
   </body>
+  <script src="signin.js"></script>
 </html>
