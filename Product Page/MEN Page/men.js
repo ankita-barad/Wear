@@ -5,18 +5,77 @@ let detailPageData = JSON.parse(localStorage.getItem("detailPage")) || [];
 window.onload = () => {
   fetchData(url);
 };
+
 async function fetchData(url) {
   try {
     let res = await fetch(url);
     let data = await res.json();
+    filter_and_sort_data(data);
     console.log(data);
-    displayProductData(data);
   } catch (error) {
     console.log(error);
   }
 }
 
+let sortEl = document.getElementById("sort");
+let filterByColor = document.getElementById("color");
+let filterByProductType = document.getElementById("productType");
+
+sortEl.addEventListener("change", () => {
+  fetchData(url);
+});
+
+filterByColor.addEventListener("change", () => {
+  fetchData(url);
+});
+
+filterByProductType.addEventListener("change", () => {
+  fetchData(url);
+});
+
+function filter_and_sort_data(data) {
+  //sort by price
+  if (sortEl.value === "") {
+    displayProductData(data);
+  } else if (sortEl.value === "priceHighToLow") {
+    data = data.sort((a, b) => {
+      console.log(a.price, b.price);
+      return b.price - a.price;
+    });
+
+    displayProductData(data);
+  } else if (sortEl.value === "priceLowToHigh") {
+    data = data.sort((a, b) => {
+      return a.price - b.price;
+    });
+    displayProductData(data);
+  }
+
+  //filter by color
+  if (filterByColor.value === "") {
+    displayProductData(data);
+  } else if (filterByColor !== "") {
+    console.log(filterByColor.value);
+    data = data.filter((ele) => {
+      return ele.color === filterByColor.value;
+    });
+    displayProductData(data);
+  }
+
+  //filter by ProductType
+  if (filterByProductType.value === "") {
+    displayProductData(data);
+  } else if (filterByProductType !== "") {
+    console.log(filterByProductType.value);
+    data = data.filter((ele) => {
+      return ele.productType === filterByProductType.value;
+    });
+    displayProductData(data);
+  }
+}
+
 function displayProductData(data) {
+  container.innerHTML = "";
   data.forEach((item) => {
     let card = document.createElement("div");
     card.setAttribute("class", "Product_Card");
