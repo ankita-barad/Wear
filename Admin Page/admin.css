@@ -1,12 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 :root {
    --radius10: 10px;
-   --radius5: 5px;
-   --radius3: 3px;
    --trans: all 0.3s ease;
    --fw400: 400;
    --fw500: 500;
-   --color-grey: #000000;
+   --color-black: #000000;
    --color-lite-grey: #f1f3f5;
 }
 
@@ -20,8 +18,9 @@
 
 body {
    font-family: 'Poppins', sans-serif;
-   color: var(--color-grey);
+   color: var(--color-black);
    background-color: var(--color-lite-grey);
+   padding-bottom: 3rem;
 }
 
 .flex {
@@ -42,12 +41,55 @@ body {
    position: relative;
 }
 
+.btn-sm {
+   border: none;
+   padding: 0.2rem 0.5rem;
+
+   cursor: pointer;
+   transition: var(--trans);
+}
+.edit-btn {
+   background-color: #e7f5ff;
+   color: #1c7ed6;
+   border: 1px solid #1c7ed6;
+}
+
+.edit-btn:hover {
+   background-color: #1c7ed6;
+   color: white;
+}
+
+.delete-btn {
+   background-color: #fff5f5;
+   color: #fa5252;
+   border: 1px solid #fa5252;
+}
+
+.delete-btn:hover {
+   background-color: #fa5252;
+   color: white;
+}
+
+.col-3 {
+   display: grid;
+   width: 100%;
+   grid-template-columns: 1fr 1fr 1fr;
+   gap: 1rem;
+}
+
+.col-2 {
+   display: grid;
+   width: 100%;
+   grid-template-columns: 1fr 1fr;
+   gap: 1rem;
+}
+
 /****************************************
 NAV BAR  
 *****************************************/
 
 nav {
-   background-color: var(--color-grey);
+   background-color: var(--color-black);
 }
 
 nav .nav-container {
@@ -68,6 +110,7 @@ ADMIN BOX
 .hide {
    opacity: 0;
    pointer-events: none;
+   display: none;
 }
 
 /*--------------------------------------
@@ -97,7 +140,7 @@ ADMIN LINKS
 
 #admin-links > div.active {
    color: white;
-   background-color: var(--color-grey);
+   background-color: var(--color-black);
 }
 
 #admin-links > div > i {
@@ -115,7 +158,7 @@ ADMIN LINKS
    position: absolute;
    left: 4rem;
    padding: 0.2rem 0.5rem;
-   border-radius: var(--radius3);
+
    color: white;
    text-align: left;
    white-space: nowrap;
@@ -133,21 +176,27 @@ ADMIN PANEL
    padding-left: 15.5rem;
 }
 
+.admin-box div.heading {
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+}
+
 .admin-box .menu-btn {
    font-size: 2rem;
    cursor: pointer;
-   display: block;
+   margin-bottom: 1rem;
+}
+
+.admin-box .heading > h1 {
    margin-bottom: 1rem;
 }
 
 /*--------------------------------------
 DASHBOARD PANEL  
 ----------------------------------------*/
-#admin-box-dashboard {
-   /* display: none; */
-}
 
-#admin-box-dashboard > div {
+#admin-box-dashboard > div:last-child {
    width: 100%;
    display: flex;
    gap: 2rem;
@@ -164,8 +213,8 @@ DASHBOARD PANEL
    display: flex;
    padding: 1.1rem;
    gap: 1rem;
-   border-radius: var(--radius3);
-   border-bottom: 3px solid var(--color-grey);
+
+   border-bottom: 3px solid var(--color-black);
    background-color: white;
    box-shadow: rgba(0, 0, 0, 0.068) 0px 1px 4px;
    cursor: pointer;
@@ -177,9 +226,8 @@ DASHBOARD PANEL
 #admin-box-dashboard .card > .icon-box {
    width: fit-content;
    display: flex;
-   background-color: var(--color-grey);
+   background-color: var(--color-black);
    color: white;
-   border-radius: var(--radius3);
 }
 #admin-box-dashboard .card > .icon-box > i {
    flex-shrink: 0;
@@ -209,7 +257,6 @@ DASHBOARD PANEL
    background-color: var(--color-lite-grey);
    border: 1px solid #0000002a;
    padding: 0.5rem;
-   border-radius: var(--radius3);
 }
 
 #admin-list .admin-details .name {
@@ -223,42 +270,233 @@ DASHBOARD PANEL
    height: 3.7rem;
    width: 3.7rem;
    border: 1px solid #0000002a;
-   border-radius: var(--radius3);
 }
 
 /*--------------------------------------
 All-PRODUCTS PANEL  
 ----------------------------------------*/
-#admin-box-all-products {
+/*--------------------------------------
+SEARCH SORT FILTER   
+----------------------------------------*/
+.search-sort-filter {
+   margin-bottom: 0.7rem;
+}
+.search-sort-filter .search-container > form {
+   display: flex;
+   gap: 0;
+}
+.search-sort-filter input,
+.search-sort-filter select {
+   display: block;
+   width: 100%;
+   height: 2rem;
+   padding-left: 0.6rem;
+   border: none;
+   border: 2px solid #0000003d;
+   margin-bottom: 0.3rem;
+}
+.search-sort-filter select {
+   cursor: pointer;
+}
+.search-sort-filter input:focus,
+.search-sort-filter select:focus {
+   border: 2px solid #000000;
+   outline: none;
+}
+
+.search-sort-filter button {
+   background-color: #000000;
+   color: white;
+   height: 2rem;
+   letter-spacing: 0.5px;
+   border: none;
+   cursor: pointer;
+   padding: 0 0.5rem;
+}
+/*--------------------------------------
+ALL PRODUCTS   
+----------------------------------------*/
+.card-list {
+   display: grid;
+   gap: 1rem;
+}
+
+.prod-card {
+   display: grid;
+   gap: 1rem;
+   flex-direction: column;
+   background-color: white;
+   padding: 1rem;
+   border: 2px solid #0000003d;
+   transform: var(--trans);
+}
+
+.prod-card > .prod-details {
+   display: flex;
+   gap: 1rem;
+}
+
+.prod-card img {
+   width: 20%;
+   min-width: 10rem;
+   object-fit: cover;
+   border: 1px solid #0000003d;
+}
+
+.prod-card h2 {
+   padding-bottom: 0.5rem;
+   font-size: 1.5rem;
+}
+
+.prod-card table {
+   border-collapse: collapse;
+   border: 1px solid #0000003d;
+}
+
+.prod-card table tr:nth-child(odd) {
+   background-color: var(--color-lite-grey);
+}
+
+.prod-card table td {
+   padding: 0.35rem 1.5rem;
+}
+
+.prod-card .prod-card-buttons {
+   display: flex;
+   gap: 1rem;
+   margin-top: 1rem;
+}
+
+/*--------------------------------------
+PRODUCTS EDIT  
+----------------------------------------*/
+.edit-prod {
+   /* display: none; */
+   /* opacity: 0; */
+   width: 100%;
+   max-width: 51rem;
+   border: 1px solid #1c7fd67c;
+   background-color: #e7f5ff;
+   color: #383838;
+   padding: 1rem;
+
+   transition: var(--trans);
+}
+
+.edit-prod form {
+   display: flex;
+   flex-direction: column;
+   gap: 0.5rem;
+}
+
+.edit-prod label {
+   font-size: 0.8rem;
+}
+
+.edit-prod input,
+.edit-prod select {
+   display: block;
+   width: 100%;
+   height: 2rem;
+   padding-left: 0.6rem;
+   border: none;
+   border: 1px solid #1c7fd67c;
+}
+
+.edit-prod input:focus,
+.edit-prod select:focus {
+   border: 2px solid #1c7fd6;
+   outline: none;
+}
+
+.edit-prod select {
+   cursor: pointer;
+}
+
+.edit-prod .check-container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   height: 2rem;
+   gap: 0.5rem;
+   border: 1px solid #1c7fd67c;
+   background-color: white;
+   padding: 0.3rem;
+}
+
+.edit-prod .check-container span {
+   font-size: 0.9rem;
+}
+
+.edit-prod .check-container > label {
+   cursor: pointer;
+   font-size: inherit;
+}
+
+.checked {
+   background-color: #026ecc;
+   display: flex;
+   align-items: center;
+   color: white;
+   padding: 0 0.3rem;
+}
+
+.edit-prod input[type='checkbox'] {
    display: none;
 }
-#admin-box-all-products .card-list {
+
+.edit-prod button {
+   align-self: end;
+   background-color: #026ecc;
+   color: white;
+   margin-top: 1rem;
+   height: 2rem;
+   letter-spacing: 0.5px;
+}
+
+.edit-prod button:hover {
+   background-color: #0362b6;
+}
+/*--------------------------------------
+CUSTOMERS PANEL  
+----------------------------------------*/
+#admin-box-all-customers .user-list {
    display: grid;
    grid-template-columns: 1fr 1fr;
    gap: 1rem;
 }
-#admin-box-all-products .prod-card {
-   display: flex;
+
+#admin-box-all-customers .user-card {
    background-color: white;
    padding: 1rem;
-   gap: 1rem;
+   border: 2px solid #0000003d;
 }
 
-#admin-box-all-products .prod-card > img {
-   height: 15rem;
-   width: 9rem;
-   object-fit: cover;
-   border: 1px solid var(--color-grey);
-}
-#admin-box-all-products .prod-card h2 {
-   padding-bottom: 0.5rem;
-}
-
-#admin-box-all-products .prod-card table {
-   width: 50%;
+#admin-box-all-customers .user-card table {
    border-collapse: collapse;
+   margin-top: 1rem;
 }
 
+#admin-box-all-customers .user-card table tr:nth-child(odd) {
+   background-color: var(--color-lite-grey);
+}
+
+#admin-box-all-customers .user-card table td {
+   padding: 0.35rem 1.5rem;
+}
+
+#admin-box-all-products .prod-card .prod-card-buttons {
+   display: flex;
+   gap: 1rem;
+   margin-top: 1rem;
+}
+/*--------------------------------------
+CUSTOMERS PANEL  
+----------------------------------------*/
+#admin-box-all-orders .order-list {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+}
 /****************************************
 MEDIUM SCREEN [ below -> 786px ] 
 *****************************************/
@@ -267,7 +505,30 @@ MEDIUM SCREEN [ below -> 786px ]
    #admin-box-dashboard > div {
       flex-direction: column;
    }
+
+   #admin-box-all-orders .order-list {
+      grid-template-columns: 1fr;
+   }
+
+   #admin-box-all-customers .user-list {
+      grid-template-columns: 1fr;
+   }
+
+   .col-3 {
+      grid-template-columns: 1fr;
+      gap: 0;
+   }
+
+   .col-2 {
+      grid-template-columns: 1fr;
+      gap: 0;
+   }
+
+   .edit-prod .check-container {
+      justify-content: flex-start;
+   }
 }
+
 @media only screen and (max-width: 786px) {
    .admin-box {
       padding-left: 7rem;
