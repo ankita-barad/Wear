@@ -24,23 +24,18 @@ function fetchandcheck() {
 }
 
 function check(data) {
-  // if (!data.includes(email.value)) {
-  //   alert("user not found");
-  //   window.open("signup.html", "_self");
-  // } else {
-    let flag = false;
-    for (let i = 0; data.length; i++) {
-      console.log(data[i].email, data[i].password);
-      if (data[i].email == email.value && data[i].password == password.value) {
-        alert("login successfull");
-        localStorage.setItem("user", data[i].id);
-        window.open("/index.html", "_self");
-        flag = true;
-        return;
-      }
-    // }
-    if (flag == false) {
-      alert("Wrong password or email");
+  let flag = false;
+  for (let i = 0; data.length; i++) {
+    console.log(data[i].email, data[i].password);
+    if (data[i].email == email.value && data[i].password == password.value) {
+      alert("login successfull");
+      localStorage.setItem("user", data[i].id);
+      window.open("/index.html", "_self");
+      flag = true;
+      return;
     }
+  }
+  if (flag == false) {
+    alert("Wrong password or email");
   }
 }
