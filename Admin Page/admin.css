@@ -1,14 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 :root {
    --radius10: 10px;
-   --radius5: 5px;
-   --radius3: 3px;
-   --trans: all 0.3s ease;
+   --trans: all 0.2s ease;
    --fw400: 400;
    --fw500: 500;
-   --color-grey: #000000;
+   --color-black: #000000;
    --color-lite-grey: #f1f3f5;
 }
+/* SCROLL */
+/* width */
+::-webkit-scrollbar {
+   width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+   background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+   background: #000000;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+   background: #2c2c2c;
+}
+/* SCROLL  */
 
 * {
    box-sizing: border-box;
@@ -20,8 +39,9 @@
 
 body {
    font-family: 'Poppins', sans-serif;
-   color: var(--color-grey);
+   color: var(--color-black);
    background-color: var(--color-lite-grey);
+   padding-bottom: 3rem;
 }
 
 .flex {
@@ -42,23 +62,81 @@ body {
    position: relative;
 }
 
+.btn-sm {
+   border: none;
+   padding: 0.2rem 0.5rem;
+   display: flex;
+   align-items: center;
+   gap: 0.5rem;
+   cursor: pointer;
+   transition: var(--trans);
+   letter-spacing: 0.2px;
+}
+.restore-btn {
+   background-color: #37b24d;
+   color: white;
+   border: 1px solid #1c7ed6;
+}
+
+.restore-btn:hover {
+   background-color: #2f9742;
+}
+
+.edit-btn,
+.add-btn,
+.update-btn {
+   background-color: #339af0;
+   color: white;
+   border: 1px solid #339af0;
+}
+
+.edit-btn:hover,
+.add-btn:hover,
+.update-btn:hover {
+   background-color: #1c7ed6;
+}
+
+.delete-btn {
+   background-color: #ff6b6b;
+   color: white;
+   border: 1px solid #ff6b6b;
+}
+
+.delete-btn:hover {
+   background-color: #f03e3e;
+}
+
+.col-3 {
+   display: grid;
+   width: 100%;
+   grid-template-columns: 1fr 1fr 1fr;
+   gap: 1rem;
+}
+
+.col-2 {
+   display: grid;
+   width: 100%;
+   grid-template-columns: 1fr 1fr;
+   gap: 1rem;
+}
+
 /****************************************
 NAV BAR  
 *****************************************/
 
 nav {
-   background-color: var(--color-grey);
+   background-color: var(--color-black);
 }
 
 nav .nav-container {
    justify-content: center;
    align-items: center;
-   padding-top: 0.5rem;
-   padding-bottom: 0.5rem;
+   padding-top: 0.8rem;
+   padding-bottom: 0.6rem;
 }
 
 nav .nav-container #logo {
-   height: 2.3rem;
+   height: 4rem;
 }
 
 /****************************************
@@ -68,6 +146,7 @@ ADMIN BOX
 .hide {
    opacity: 0;
    pointer-events: none;
+   display: none;
 }
 
 /*--------------------------------------
@@ -75,13 +154,13 @@ ADMIN LINKS
 ----------------------------------------*/
 
 #admin-links {
+   z-index: 100;
+   position: absolute;
+   top: 1.5rem;
    width: fit-content;
+   cursor: pointer;
    background-color: white;
    transition: var(--trans);
-   position: absolute;
-   cursor: pointer;
-   top: 1.5rem;
-   z-index: 100;
 }
 
 #admin-links > div {
@@ -97,17 +176,19 @@ ADMIN LINKS
 
 #admin-links > div.active {
    color: white;
-   background-color: var(--color-grey);
+   background-color: var(--color-black);
 }
 
 #admin-links > div > i {
    font-size: 1.5rem;
    padding: 1rem;
+   pointer-events: none;
 }
 #admin-links > div > span {
    font-size: 1.1rem;
    font-weight: 500;
    width: 8rem;
+   pointer-events: none;
 }
 
 #admin-links > div > small {
@@ -115,13 +196,13 @@ ADMIN LINKS
    position: absolute;
    left: 4rem;
    padding: 0.2rem 0.5rem;
-   border-radius: var(--radius3);
    color: white;
    text-align: left;
    white-space: nowrap;
    background-color: black;
    box-shadow: rgba(0, 0, 0, 0.363) 0px 5px 15px;
    transition: var(--trans);
+   pointer-events: none;
 }
 
 /*--------------------------------------
@@ -131,23 +212,30 @@ ADMIN PANEL
 .admin-box {
    padding-top: 1.5rem;
    padding-left: 15.5rem;
+   transition: var(--trans);
+}
+
+.admin-box div.heading {
+   display: flex;
+   align-items: center;
+   gap: 1rem;
 }
 
 .admin-box .menu-btn {
    font-size: 2rem;
    cursor: pointer;
-   display: block;
+   margin-bottom: 1rem;
+}
+
+.admin-box .heading > h1 {
    margin-bottom: 1rem;
 }
 
 /*--------------------------------------
 DASHBOARD PANEL  
 ----------------------------------------*/
-#admin-box-dashboard {
-   /* display: none; */
-}
 
-#admin-box-dashboard > div {
+#admin-box-dashboard > div:last-child {
    width: 100%;
    display: flex;
    gap: 2rem;
@@ -155,6 +243,8 @@ DASHBOARD PANEL
 
 #admin-box-dashboard > div > div:first-child {
    flex-basis: 40%;
+   display: flex;
+   flex-direction: column;
 }
 #admin-box-dashboard > div > div:last-child {
    flex-grow: 1;
@@ -162,13 +252,11 @@ DASHBOARD PANEL
 
 #admin-box-dashboard .card {
    display: flex;
-   padding: 1.1rem;
-   gap: 1rem;
-   border-radius: var(--radius3);
-   border-bottom: 3px solid var(--color-grey);
-   background-color: white;
-   box-shadow: rgba(0, 0, 0, 0.068) 0px 1px 4px;
+   padding: 1.25rem;
+   border-bottom: 2px solid var(--color-black);
    cursor: pointer;
+   background-color: white;
+   gap: 1rem;
 }
 
 #admin-box-dashboard .card > div {
@@ -177,15 +265,13 @@ DASHBOARD PANEL
 #admin-box-dashboard .card > .icon-box {
    width: fit-content;
    display: flex;
-   background-color: var(--color-grey);
+   background-color: var(--color-black);
    color: white;
-   border-radius: var(--radius3);
 }
 #admin-box-dashboard .card > .icon-box > i {
    flex-shrink: 0;
    font-size: 2.4rem;
    padding: 0.7rem;
-
    align-self: flex-start;
 }
 #admin-box-dashboard .card h1 {
@@ -206,10 +292,9 @@ DASHBOARD PANEL
    justify-content: space-between;
    align-items: center;
    width: 100%;
-   background-color: var(--color-lite-grey);
-   border: 1px solid #0000002a;
    padding: 0.5rem;
-   border-radius: var(--radius3);
+   border: 1px solid #0000002a;
+   background-color: var(--color-lite-grey);
 }
 
 #admin-list .admin-details .name {
@@ -223,51 +308,302 @@ DASHBOARD PANEL
    height: 3.7rem;
    width: 3.7rem;
    border: 1px solid #0000002a;
-   border-radius: var(--radius3);
 }
 
 /*--------------------------------------
 All-PRODUCTS PANEL  
 ----------------------------------------*/
-#admin-box-all-products {
+/*--------------------------------------
+SEARCH SORT FILTER   
+----------------------------------------*/
+.search-sort-filter {
+   margin-bottom: 0.7rem;
+}
+.search-sort-filter .search-container > form {
+   display: flex;
+   gap: 0;
+}
+.search-sort-filter input,
+.search-sort-filter select {
+   display: block;
+   width: 100%;
+   height: 2rem;
+   margin-bottom: 0.3rem;
+   padding-left: 0.6rem;
+   border: none;
+   border: 2px solid #000000;
+}
+.search-sort-filter input {
+   border-right: none;
+}
+.search-sort-filter select {
+   cursor: pointer;
+}
+.search-sort-filter input:focus,
+.search-sort-filter select:focus {
+   background-color: var(--color-lite-grey);
+   outline: none;
+}
+
+.search-sort-filter button {
+   height: 2rem;
+   padding: 0 0.5rem;
+   border: none;
+   color: white;
+   letter-spacing: 0.5px;
+   cursor: pointer;
+   background-color: #000000;
+}
+/*--------------------------------------
+ALL PRODUCTS   
+----------------------------------------*/
+.card-list {
+   display: grid;
+   gap: 1rem;
+}
+
+.item-card {
+   display: grid;
+   flex-direction: column;
+   padding: 1rem;
+   border: 2px solid #0000003d;
+   background-color: white;
+   transform: var(--trans);
+   gap: 1rem;
+}
+
+.item-card > .item-details {
+   display: flex;
+   gap: 1rem;
+}
+
+.item-card img {
+   width: 20%;
+   min-width: 10rem;
+   object-fit: cover;
+   border: 1px solid #0000003d;
+}
+
+.item-card h2 {
+   padding-bottom: 0.5rem;
+   font-size: 1.5rem;
+}
+
+.item-card table {
+   border-collapse: collapse;
+   border: 1px solid #0000003d;
+}
+
+.item-card table tr:nth-child(odd) {
+   background-color: var(--color-lite-grey);
+}
+
+.item-card table td {
+   padding: 0.35rem 0.7rem;
+   border: 1px solid #0000003d;
+}
+
+.item-card .item-card-buttons {
+   display: flex;
+   gap: 1rem;
+   margin-top: 1rem;
+}
+
+/*--------------------------------------
+PRODUCTS EDIT  
+----------------------------------------*/
+.edit-item {
+   width: 100%;
+   max-width: 51rem;
+   padding: 1rem;
+   border: 1px solid #1c7fd67c;
+   color: #383838;
+   background-color: #e7f5ff;
+
+   transition: var(--trans);
+}
+
+.edit-item form {
+   display: flex;
+   flex-direction: column;
+   gap: 0.5rem;
+}
+
+.edit-item label {
+   font-size: 0.8rem;
+}
+
+.edit-item input,
+.edit-item select,
+.edit-item textarea {
+   display: block;
+   width: 100%;
+   height: 2rem;
+   padding-left: 0.6rem;
+   border: none;
+   border: 1px solid #1c7fd67c;
+}
+.edit-item textarea {
+   height: inherit;
+   padding: 0.6rem;
+}
+
+.edit-item input:focus,
+.edit-item textarea:focus,
+.edit-item select:focus {
+   border: 2px solid #1c7fd6;
+   outline: none;
+}
+
+.edit-item select {
+   cursor: pointer;
+}
+
+.edit-item .check-container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   height: 2rem;
+   padding: 0.3rem;
+   border: 1px solid #1c7fd67c;
+   background-color: white;
+   gap: 0.5rem;
+}
+
+.edit-item .check-container span {
+   font-size: 0.9rem;
+}
+
+.edit-item .check-container > label {
+   cursor: pointer;
+   font-size: inherit;
+}
+
+.checked {
+   display: flex;
+   align-items: center;
+   padding: 0 0.3rem;
+   color: white;
+   background-color: #026ecc;
+}
+
+.edit-item input[type='checkbox'] {
    display: none;
 }
-#admin-box-all-products .card-list {
+
+.edit-item button {
+   align-self: end;
+   margin-top: 1rem;
+}
+/*--------------------------------------
+CUSTOMERS PANEL  
+----------------------------------------*/
+.user-list {
    display: grid;
-   grid-template-columns: 1fr 1fr;
-   gap: 1rem;
-}
-#admin-box-all-products .prod-card {
-   display: flex;
-   background-color: white;
-   padding: 1rem;
+   width: 100%;
+   max-width: fit-content;
+   grid-template-columns: 1fr 1fr 1fr;
    gap: 1rem;
 }
 
-#admin-box-all-products .prod-card > img {
-   height: 15rem;
-   width: 9rem;
-   object-fit: cover;
-   border: 1px solid var(--color-grey);
-}
-#admin-box-all-products .prod-card h2 {
-   padding-bottom: 0.5rem;
-}
-
-#admin-box-all-products .prod-card table {
-   width: 50%;
+.user-card table {
    border-collapse: collapse;
 }
 
+.user-card table tr {
+   background-color: white;
+}
+.user-card table td {
+   padding: 0.35rem 0.7rem;
+   border: 1px solid #0000003d;
+}
+
+/*--------------------------------------
+Orders PANEL  
+----------------------------------------*/
+.order-list {
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+}
+.order-list .order-card {
+   display: flex;
+   width: fit-content;
+   padding: 1rem;
+   border: 2px solid #0000003d;
+   background-color: white;
+   gap: 1rem;
+}
+
+.order-card table {
+   border-collapse: collapse;
+}
+
+.order-card .user-details {
+   width: fit-content;
+   grid-area: A;
+}
+
+.order-card .user-details td {
+   padding: 0.3rem 1rem;
+   border: 1px solid #0000003d;
+}
+
+.order-card .user-details tr:nth-child(odd) {
+   background-color: var(--color-lite-grey);
+}
+
+.order-card .item-details {
+   width: fit-content;
+   grid-area: B;
+}
+.order-card .item-details table td > img {
+   height: 3rem;
+   width: 4rem;
+   object-fit: cover;
+   display: flex;
+   border: 1px solid #0000003d;
+}
+
+.order-card .item-details table th {
+   background-color: var(--color-lite-grey);
+}
+
+.order-card .item-details table td,
+.order-card .item-details table th {
+   border: 1px solid #0000003d;
+   padding: 0.6rem 1rem;
+   font-weight: 400;
+}
 /****************************************
 MEDIUM SCREEN [ below -> 786px ] 
 *****************************************/
 
 @media only screen and (max-width: 1130px) {
+   .order-list .order-card,
    #admin-box-dashboard > div {
       flex-direction: column;
    }
+
+   .user-list {
+      grid-template-columns: 1fr 1fr;
+   }
+
+   .col-3 {
+      grid-template-columns: 1fr;
+      gap: 0;
+   }
+
+   .col-2 {
+      grid-template-columns: 1fr;
+      gap: 0;
+   }
+
+   .edit-item .check-container {
+      justify-content: flex-start;
+   }
 }
+
 @media only screen and (max-width: 786px) {
    .admin-box {
       padding-left: 7rem;
@@ -284,6 +620,10 @@ MEDIUM SCREEN [ below -> 786px ]
    #admin-links > div:hover > small {
       opacity: 1;
       pointer-events: none;
+   }
+
+   .user-list {
+      grid-template-columns: 1fr;
    }
 }
 

@@ -3,5 +3,92 @@
   margin: auto;
   display: flex;
   justify-content: center;
-  
+}
+.ProductDetailContainer {
+  margin-left: 48px;
+}
+
+.ProductPrice {
+  font-size: 18px;
+  font-weight: bold;
+  color: #666;
+}
+.NameDiv {
+  width: 214px;
+  color: #2d2d2d;
+  font-size: 18px;
+}
+.ProductColor {
+  font-size: 18px;
+}
+.addtoCartBtn_favBtn_container {
+  display: flex;
+  justify-content: center;
+  line-height: 41px;
+  margin-right: 166px;
+}
+.addToCartBtn {
+  width: 243px;
+  height: 40px;
+  background-color: #018849;
+  color: white;
+  border: none;
+}
+.favBtnDiv {
+  width: 42px;
+  height: 42px;
+  background-color: #dad5d5;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+.favBtn {
+  padding: 8px;
+}
+.detailsContainer {
+  margin-top: 20px;
+}
+.detailsContainer button {
+  width: 250px;
+  height: 40px;
+  font-size: 14px;
+  color: #2d2d2d;
+  background-color: #ffffff;
+  border: none;
+  border-top: 1px solid rgb(164, 159, 159);
+  text-align: left;
+}
+#sizeDetails {
+  border-bottom: 1px solid rgb(164, 159, 159);
+}
+.productDetails {
+  visibility: hidden;
+}
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+.active,
+.accordion:hover {
+  background-color: #ccc;
+}
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+}
+.ProductContent,
+.BrandDetailsContent,
+.sizeDetailsContent {
+  margin-top: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 208px;
+  border-radius: 4px;
 }

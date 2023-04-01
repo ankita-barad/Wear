@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        padding: 0px;
+        margin: 0px;
+        background-color: #eee;
+      }
+      #head {
+        width: 60%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      #head img {
+        width: 10%;
+        height: 25px;
+      }
+      #body1 {
+        display: grid;
+        width: 60%;
+        margin: auto;
+        /* gap: 5px; */
+        grid-template-columns: 60% 40%;
+      }
+      .bottomdiv {
+        display: flex;
+        /* background-color: white; */
+        padding-right: 5px;
+        justify-content: space-between;
+      }
+      #content > div {
+        display: flex;
+
+        /* background-color: white; */
+        /* border: 1px solid black; */
+      }
+      #content > div img {
+        width: 50%;
+      }
+      .content-1 {
+        display: flex;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="head">
+      <img src="./image/logo (1).png" alt="" />
+      <h2>CHECKOUT</h2>
+      <img src="./image/digicert.png" alt="" />
+    </div>
+    <div id="body1">
+      <div>
+        <div
+          id="email"
+          style="
+            background-color: white;
+            padding: 5px 10px 5px 10px;
+            margin-right: 5px;
+          "
+        >
+          <h3>EMAIL ADDRESS</h3>
+          <p id="mail"></p>
+        </div>
+        <div
+          id="address"
+          style="
+            background-color: white;
+            padding: 5px 10px 5px 10px;
+            margin-top: 10px;
+            margin-right: 5px;
+          "
+        >
+          <h3>DELIVERY ADDRESS</h3>
+          <p id="home"></p>
+        </div>
+        <div id="buynow" style="margin-top: 10px; padding: 5px 10px 5px 10px">
+          <button
+            style="
+              width: 80%;
+              display: block;
+              margin: auto;
+              height: 35px;
+              background-color: #018849;
+              color: white;
+              font-weight: 500;
+            "
+          >
+            BUY NOW
+          </button>
+        </div>
+        <div
+          style="
+            /* background-color: white; */
+            padding: 5px 10px 5px 10px;
+            margin-right: 5px;
+            margin-top: 10px;
+          "
+        >
+          <p>
+            By placing your order you agree to our Terms & Conditions, privacy
+            and returns policies . You also consent to some of your data being
+            stored by ASOS, which may be used to make future shopping
+            experiences better for you.
+          </p>
+        </div>
+      </div>
+      <div style="padding: 10px; background-color: white">
+        <div class="bottomdiv">
+          <h3><span id="nos"></span>ITEMS</h3>
+          <p>Edit</p>
+        </div>
+        <div id="content"></div>
+        <div>
+          <div class="bottomdiv">
+            <p>Subtotal</p>
+            <p id="subtotal"></p>
+          </div>
+          <div class="bottomdiv">
+            <h3>Total to Pay</h3>
+            <h3 id="total"></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style="
+        background-color: white;
+        text-align: center;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 25px;
+      "
+    >
+      <p>WEAR HELP</p>
+    </div>
+  </body>
+  <script src="payment.js"></script>
+</html>

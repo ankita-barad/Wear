@@ -31,13 +31,14 @@ form.addEventListener("submit", function (e) {
   fetchandpost(obj);
 });
 
-function fetchandpost(obj) {
+async function fetchandpost(obj) {
   fetch(`https://64230bad001cb9fc2036bd2f.mockapi.io/users`, {
     method: "POST",
     headers: {
       "Content-type": "application/json",
     },
     body: JSON.stringify(obj),
-  })
-
+  }).then((res) => {
+    window.open("signin.html", "_self");
+  });
 }

@@ -2,21 +2,94 @@ let url = "https://64230bad001cb9fc2036bd2f.mockapi.io/products";
 let container = document.getElementById("men_products");
 let detailPageData = JSON.parse(localStorage.getItem("detailPage")) || [];
 
+let user = localStorage.getItem("user");
+
 window.onload = () => {
   fetchData(url);
+  fetchUserData();
+  localStorage.setItem("user", 12);
 };
-async function fetchData(url) {
+
+async function fetchUserData() {
   try {
-    let res = await fetch(url);
+    let res = await fetch("https://64230bad001cb9fc2036bd2f.mockapi.io/users");
     let data = await res.json();
     console.log(data);
-    displayProductData(data);
   } catch (error) {
     console.log(error);
   }
 }
 
+async function fetchData(url) {
+  try {
+    let res = await fetch(url);
+    let data = await res.json();
+    filter_and_sort_data(data);
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+let sortEl = document.getElementById("sort");
+let filterByColor = document.getElementById("color");
+let filterByProductType = document.getElementById("productType");
+
+sortEl.addEventListener("change", () => {
+  fetchData(url);
+});
+
+filterByColor.addEventListener("change", () => {
+  fetchData(url);
+});
+
+filterByProductType.addEventListener("change", () => {
+  fetchData(url);
+});
+
+function filter_and_sort_data(data) {
+  //sort by price
+  if (sortEl.value === "") {
+    displayProductData(data);
+  } else if (sortEl.value === "priceHighToLow") {
+    data = data.sort((a, b) => {
+      console.log(a.price, b.price);
+      return b.price - a.price;
+    });
+
+    displayProductData(data);
+  } else if (sortEl.value === "priceLowToHigh") {
+    data = data.sort((a, b) => {
+      return a.price - b.price;
+    });
+    displayProductData(data);
+  }
+
+  //filter by color
+  if (filterByColor.value === "") {
+    displayProductData(data);
+  } else if (filterByColor !== "") {
+    console.log(filterByColor.value);
+    data = data.filter((ele) => {
+      return ele.color === filterByColor.value;
+    });
+    displayProductData(data);
+  }
+
+  //filter by ProductType
+  if (filterByProductType.value === "") {
+    displayProductData(data);
+  } else if (filterByProductType !== "") {
+    console.log(filterByProductType.value);
+    data = data.filter((ele) => {
+      return ele.productType === filterByProductType.value;
+    });
+    displayProductData(data);
+  }
+}
+
 function displayProductData(data) {
+  container.innerHTML = "";
   data.forEach((item) => {
     let card = document.createElement("div");
     card.setAttribute("class", "Product_Card");
