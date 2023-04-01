@@ -2,9 +2,23 @@ let url = "https://64230bad001cb9fc2036bd2f.mockapi.io/products";
 let container = document.getElementById("men_products");
 let detailPageData = JSON.parse(localStorage.getItem("detailPage")) || [];
 
+let user = localStorage.getItem("user");
+
 window.onload = () => {
   fetchData(url);
+  fetchUserData();
+  localStorage.setItem("user", 12);
 };
+
+async function fetchUserData() {
+  try {
+    let res = await fetch("https://64230bad001cb9fc2036bd2f.mockapi.io/users");
+    let data = await res.json();
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 async function fetchData(url) {
   try {
