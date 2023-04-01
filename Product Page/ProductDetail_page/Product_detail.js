@@ -1,5 +1,51 @@
 let ProductDetails = JSON.parse(localStorage.getItem("detailPage")) || [];
 let container = document.getElementById("detailPage");
+
+let user = localStorage.getItem("user") || [];
+
+async function fetchUser() {
+  try {
+    let res = await fetch(
+      `https://64230bad001cb9fc2036bd2f.mockapi.io/users/${user}`
+    );
+    let data = await res.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function fetchProductByID(id) {
+  try {
+    let res = await fetch(
+      `https://64230bad001cb9fc2036bd2f.mockapi.io/products/${id}`
+    );
+    let data = await res.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function updateCartItem(userId, cartItems) {
+  try {
+    let res = await fetch(
+      `https://64230bad001cb9fc2036bd2f.mockapi.io/users/${userId}`,
+      {
+        method: "PUT",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          cartList: cartItems,
+        }),
+      }
+    );
+    let data = await res.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 function displayProduct() {
   ProductDetails.forEach((item) => {
     let card = document.createElement("div");
@@ -51,7 +97,20 @@ function displayProduct() {
 
     let addToCartBtn = document.createElement("button");
     addToCartBtn.innerText = "ADD TO BAG";
+    addToCartBtn.setAttribute("data-set", `${item.id}`);
     addToCartBtn.setAttribute("class", "addToCartBtn");
+
+    addToCartBtn.addEventListener("click", async (e) => {
+      if (user) {
+        let resuserData = await fetchUser();
+        const selectedProductId = +e.target.dataset.set;
+        const product = await fetchProductByID(selectedProductId);
+        resuserData.cartList.push(product);
+        await updateCartItem(resuserData.id, resuserData.cartList);
+      } else {
+        console.log("no user");
+      }
+    });
 
     let favBtn = document.createElement("img");
     favBtn.setAttribute("src", "../Images/heart-3-line.png");

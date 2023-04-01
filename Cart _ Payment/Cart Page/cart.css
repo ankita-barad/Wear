@@ -1,0 +1,20 @@
+.cart {
+  width: 60%;
+  margin: auto;
+}
+.cartImage {
+  width: 200px;
+  height: 200px;
+}
+.card {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  border: 1px solid black;
+}
+.name {
+  width: 50%;
+}
+.sidebar {
+  margin-right: 128px;
+}
