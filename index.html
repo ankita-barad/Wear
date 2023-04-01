@@ -13,6 +13,28 @@
     <link rel="stylesheet" href="image/WhatsApp Image 2023-03-28 at 9.59.22 PM.jpeg">
     <link rel="stylesheet" href=" https://remixicon.com/">
     <style>
+/* SCROLL */
+/* width */
+::-webkit-scrollbar {
+   width: 6px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+   background: #F1F1F1;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+   background: #141414;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+   background: #2C2C2C;
+}
+/* SCROLL  */
+
+
+
+
       *{
         text-decoration: none;
       }
@@ -56,10 +78,12 @@
             display: flex;
             background-color:#2d2d2d;
             color: white;
+            justify-content: space-evenly;
+            
         }
         #logo{
-            margin-left: 30px;
-            margin-top: 10px;
+            margin-left: 0px;
+            margin-top: 15px;
         }
         .men{
             padding-right: 20px;
@@ -71,13 +95,23 @@
             padding-right: 25px;
             cursor: pointer;
         }
+      
+        
         #search{
             font-size: 20px;
             width: 400%;
-            height: 50px;
+            height: 40px;
             margin-top: 5px;
             margin-right: 40px;
             border-radius: 50px;
+            border: none;
+            outline:none;
+            padding-left: 2rem;
+            font-size: .9rem;
+            
+        }
+        #placeholder{
+          margin-left: 20px;
         }
         .login{
             width: 40px;
@@ -192,6 +226,94 @@ body{
   display: flex;
   width: 100%;
 }
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content div {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 20px;
+  width: 120%;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  color: black;
+  text-decoration: none;
+  background-color: white;
+  width: 100%;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+} 
+.dropp {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  font-size: 16px;
+  border: none;
+  background-color: #808080;
+  color: white;
+  padding: 12px 16px;
+  cursor: pointer;
+}
+
+.dropp-content {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  background-color: white;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  width: 400px;
+}
+
+.dropp-column {
+  float: left;
+  width: 50%;
+  padding: 12px 16px;
+  text-align: left;
+}
+
+.dropp a {
+  font-size: 16px;
+  color: #333333;
+  padding: 6px 0px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropp a:hover {
+  background-color: #f2f2f2;
+  color: black;
+}
+
+.dropp:hover .dropp-content {
+  display: block;
+}
+
+.dropp:hover .dropbtn {
+  background-color:#f2f2f2 ;
+  color: black;
+  
+}
+
 
     </style>
 </head>
@@ -216,27 +338,334 @@ body{
     </div>
 </div>
 <div id="down">
-    <div id="logo"> <img src="./image/WhatsApp Image 2023-03-28 at 9.59.22 PM.jpeg" alt="wear_logo" width="60%"></div>
-    <h2 class="women">WOMEN</h2>
-    <h2 class="men">MEN</h2>
-    <input type="search" id="search">
-    <a href="signup.html"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAflBMVEUAAAD////z8/NERERbW1v7+/v4+Pi+vr7n5+fDw8OSkpLx8fHT09P5+fkQEBDl5eWvr6+4uLgYGBg9PT0xMTFKSkp/f3+cnJwoKCgtLS0gICCLi4vMzMyioqKEhIRQUFA4ODhlZWXZ2dmpqalpaWlycnITExMcHBx3d3dVVVXNt6igAAAKkUlEQVR4nO1da3eqOhCtDxSEghZFRFTEZ///H7z12J7ednZCAkPCWYv9XZIxybwys/Py0qNHjx49evTo0aNHjx49uoTwlqabZfHAcpOmt9D2hDhxTVfHZD2fekFZRm5UBrk3na+T4yi92p4aB4rj7LQoJwOKYbA4bY+F7Qk2w2Y/zSMg3DeifHFPbU+zNi5eOZSK94QfTM+2p1oH2UxJvE8hy5nt+eriuvOVxfvE9l/SrvFOV7wHnHVse+KKGM3Ut+dPuLN/QcYsKWvK90Ce2J5/JcZTZPrU4cwPtkWQYyu3fioo97aFkCBruIBPTOaddQHigEG+B/KlbVEwLtomUIjJ0bYwAOGMTb4H7rblIQhPrAJ+uDhvtkX6hTmzgIPBLrMt0w/wCzhwdl1aRRUB3WC+3ibJPUm2u0XgKog4644vXuloR6fzaPmdmwlv6XJ0nldK2Rnbv65YPKHSSGcVQl6MyiHEXebI+NOR9McrT2pFO+GkHiSuaDSvDodi2W51O+DdvOXi6SnGCeO5eB09+wpVqEYdTzm/dL14QhF3bU5eBRfRzPztRuMzxV70naHtmFh0CN2V5odWop2aF23MWxmiQ+jpfyoT7VSr+1QQMDmnOh+7Cpx332K+OMVLOKyZ3g3Xr/B7C3sx/xba+mFtfzJcO1BEa67NCGYthusGJgw7gKUto7hFs3HmTeK6EJtXSxF/DFO/+a3RR0O4L3ymKWsCGvth05huA68ErKjTDFqK5mrvvTOLCGfCYJ2vKJ6ejJt/WBvowEQceYcVOt85w4d10d5x2QMzG+n48TxIgIALngQgcpUma5ZP6wAE5kMujZcAJZabTrwVYCct2FwPcMZLeb6HH3vqQbp87uOZGsWJ6WoN8C9zplRAYL0wu01jOgXWPxnoscDsNgWhb8ma+KMSRmbvFGdU0fDaZHAKzOb4p3ST8ubEzlTCncmDmFGb7PNGqTcqoWcy//1OFY3LPAQ96JFugrIJ7nT8BfMQNPHmvzMPIQNIQXFni0B8bVKZzqhHw31IDlRCkyk3EKRyDxHTg2DyBoNmxLgVzUtB42CDninI+QXcYyypzd+Za164LcjoNa5i5NhQkzs3lxjOqEsz5R4jpWMsmqViG47OLyHdJ1OrEnIb/JcMSGiuDszIGlrdpUY0Db0SNqhpQiohe8YWWIuTwVY3ag9L7iGAxV8bDBCp4+9wDxHThKzJIB/cRnPruRUZwajnDaIn7tAGpDFMRk8g7T5nHoKGL0OTEfCRZjEi5iFAnsRkKWZBVTnzLW1IN2lutLGNOv5D3lMCFM3JnEvzAVC9xGvzQZHblnWAKqCsPqu9oAK6ZusxVtQe+5xpFGArApPp0g+AagKP0akC1xYGY6c/AF4N4+XQmN6QOqYv8g/glpuv1JXGhoPIeEUNKAX1uSZxBmUQufFGL9RuyJXuA0vI7hUqAMyCyTdGhblRwfJpLaDCPZailwLVVrNnnBUAiy8Z/I4QVe45NrouMlQIOmnuHY/R5rBTQgtbmxvvpjfYo2KH3AV4boPmaUXc4MAyYW2EuLC+VjfJX+CuElv8PAdYyt7IvcJ/GnOdR+P5DGsr1DdQiPSAvfY1ARFG3a6gbI2pe2zSZGzxlCa1XKzshL82tNrvLGIzqdOdl+OmJ67a6poYifq4A93UH6i9eKK03M8t7G719fSNQMcMBq/WmdzErdwayzgWs2exX71qIxR30zs7tbLeg0DFPFB2gBsDesqfiLbVMq7WEsoC33SFPsReRkAXVGU5z1JyKdut6k/cdgI1/wcVPQqJlPvDfKMMBigM+R8imcIZS/ndTh04hE9cxaQPA3lgIKXuMVhdUg0ZD5YjTscfJXvUQi+XBJu7bC3E6kJGTuQm3aHe29zFZv8B4WJkcn4p794Ruq+LV8GWKMz2g+q8H5hMu8C9Fy8qCa1qS/ggKbJOMqRC5ylUpipEfaXZq9/fKAKZsf+CeKupcC06RntlfkEQ4v9CIJ4hTOBT2PLdVmrTkxZrKZJGe+Y7uT+QKBLqnqRmrVLXPBFdjDtwywqivS84FYxthaKIk5nhZXxHl5jov6+cWLpWIIn8wOvUaC3GRYmze+LtVYrtxltPRSMbvclPFHTo6/y8Ut1Ym8NFZbNOjNUMQW6hn/COum5zeldgkjbDNVTpiEzcmlphuXar+MBN9AKnFXyzfp7UvylK90HFAWifzbxCu0+mSbOKk3CbS2V0Fi37cLHUSjhThnL6bC+6wHhi2qphlAsYJDyDF/IHJNqkNN3ItuhwW7ANVEjVNXsH0jdkfvKUtwo7lrn1zUoFJJC4og6/pZKFZi2l4RAz1BOTVlhU38XL6LTSICTk0x34TbggJch2wmX0W7j5PgpHK9vzpcRKld8Nx7UzD7Qa1RyEOzVg7i8RX77IQ/jGEPtQzAUMwqRY67m+m9DRZz0cQjVqIpwBNCNPMO7TkSDp9GomzScolWrOlfoNwVnwTbWtiow/W3W74OrMIB/8Fm9Uh8kq3gTFFiYz0QJPnIlMUXCFbZafWeATs+xTwRMkhouxBNkhjpMSYmdmbjrLLvA5GC6m8IctFLUKIsbGewkXvEhrZNrCGKb/tR/S+IUrXELfDgs8VqgNewLPyFLUe76CATBVO2lkMfDxjmwVulzhPm1UgTpGX5TUOLUNyAPfhO4Pv+VksziCu9cKEBvwE2BoATAPfYQ49TcV+pxj99nlM/KwatM5ZGgJLb+h9Yb0aW3WE6RII9svZ0MXpK4DjuJO690PsJRVUpQkA8qPGKYNRyjAIjr1/ngUVNhfwpcXVDhfi5IeObq5leqr3wATc+sUooLL0Pq9k6xAvVY1bqMAFdSg7EjlNVCBXqH9FUDZ7Vh/T/IT4Ka2xmNCwLL6Bf9ka2GJtqmurlmhJzpamW4dAB2hfYLQ2432beEXjmARC81voDClhanWBCDG1A3qUAF2F6z9F0DKRjOqG4Mgxf7bw98AbGeaWwyUJViNfH8DPZ+ppSZCcAy7tEmhSdSy1in4izrxzPlf3Klfo/V4QUwF5H3sqDHeaeTj6Nh8kEVs9IAqP96o0dfKIIFb3250VX8DHESdKVKnlI1PjwugwVYn+U0TBTWik3YB3urVsWedP4YvLzeq7l11ZTiiEnYlNPwGLS/w1Q3akUrYjfzF/0H5Xnz1ZA1VpYZJfFVwJPGdRtkC9dlMk/gq4I0oU40sCzUWnlYEncaHcfugMbq6uaBqaqrhEWXJInCH7YNMUuMOihpTjYdyDgul/uc2EChThVCOYHUJD4rtwW1AOToI6cWA8vVVZlHAQanqe2+ohMpaSrH9vB0olyrGREL1t35tCPYXpapNWxEJla9khAR1RqBcjHagEqrWOyt217cEZQnfiYTKFd1SwqjWEam+REPXUPllB8sSqq5hSiRUvmK1u0uVNQ31aQLV+FeFcKY9BMq+JdGI6vdqNgT7gs779b/cNlc9YV7Rrd8qSo2blctPETXKADZqTCVtQKu/JPzRaqRVUwUeJTcDTY6+6/7vRF3NQo6xGhcLN0rdJqzwMPM+guhhvtZOBS/vCyX6Gkb43qxGmiVM49Eo3tQpp8qKkVnEHSn06dGjR48ePXr06NGjR49/Fv8Bm6KVK2F2gwkAAAAASUVORK5CYII=" alt="login" class="login"></a>
-    <a href = "cart.html"><img src="" alt="cart" class="login"></a>
-    <a href="">123</a>
+    <div id="logo"> <img src=" https://i.postimg.cc/ZKF0kNwG/arpit-jana.png" alt="wear_logo" width="60%"></div>
+    <a style="color: white;" href="#"><h2  class="women">WOMEN</h2></a>
+    <a style="color: white;" href="#"><h2 class="men">MEN</h2></a>
+    <input type="text" id="search" placeholder="Search for items and brands">
+   <div class="dropdown"> <a  href="signup.html"><img style="height: 40px;width: 45px;;" src="./image/sign.png" alt="login" class="login"></a> 
+  <div class="dropdown-content">
+    <div class="top">
+
+      <a href="#">Join</a>
+      <a href="#">Sign in</a>
+      <a href="#">My Account</a>
+      <a href="#">My Orders</a>
+      <a href="#">Returns Information</a>
+      <a href="#">Contact Preferences</a>
+
+
+
+    </div>
+  </div>  
+  </div>
+
+
+
+
+
+    <a href = "cart.html"><img style="height: 50px;" src="./image/cart.png" alt="cart" class="cart"></a>
+    <a href="wishlist.html"><img style="height: 50px;" src="./image/wishlist.png" alt="wishlist"></a>
 </div>
-   <div id="navbar"></div>
+   
    <div id="category">
-    <a href=""> <p>sale</p> </a>
-     <a href=""><p>New in</p></a>
-     <p>Clothing</p>
-     <p>Shoes</p>
-     <p>Sportswear</p>
-     <p>Accesories</p>
-     <p>Spring</p>
-     <p>Jeans</p>
-     <p>Brands</p>
-     <p>Marketplace</p>
-     <p>Outlet</p>
+   <div class="dropp"><button class="dropbtn">Sale</button> 
+  <div class="dropp-content"> 
+    <div class="dropp-column">
+            <a href="#">SALE Shirts</a>
+            <a href="#">SALE T-Shirts & Vest</a>
+            <a href="#">SALE Shoes & Trainers</a>
+            <a href="#">SALE Hoodies & Sweatshirts</a>
+            <a href="#">SALE Jumpers & Cardigons</a>
+            <a href="#">SALE Shorts</a>
+            <a href=""> SALE Gifts</a>
+            <a href=""> SALE Jackets & Coats</a>
+            <a href=""> SALE Jwellery</a>
+            <a href=""> SALE Swimwear</a>
+            <a href=""> SALE Polo Shirts</a>
+            <a href=""> SALE Sunglasses</a>
+
+    </div>
+
+      <div class="dropdown-column">
+            <a href="#">Western Wear</a>
+            <a href="#">Tops & Tees</a>
+            <a href="#">Dresses</a>
+            <a href="#">Jeans & Jeggings</a>
+            <a href="#">Pants & Trousers</a>
+            <a href="#">Skirts</a>
+          </div> 
+
+          <div class="dropdown-column">
+            <a href="#">Western Wear</a>
+            <a href="#">Tops & Tees</a>
+            <a href="#">Dresses</a>
+            <a href="#">Jeans & Jeggings</a>
+            <a href="#">Pants & Trousers</a>
+            <a href="#">Skirts</a>
+          </div> 
+  </div></div>
+
+
+  <div class="dropp"><button class="dropbtn">New in</button> 
+    <div class="dropp-content"> 
+      <div class="dropp-column">
+              <a href="#">View All</a>
+              <a href="#">Clothing</a>
+              <a href="#">Shoes</a>
+              <a href="#">Coats & Jackets</a>
+              <a href="#">Hoodies</a>
+              <a href="#">T-Shirts & Vests</a>
+              <a href="#"> Sportswear</a>
+              <a href="#"> Accesories</a>
+              <a href="#">Face + Body</a>
+            
+  
+      </div>
+
+      <div class="dropdown-column">
+        <a href="#">Western Wear</a>
+        <a href="#">Tops & Tees</a>
+        <a href="#">Dresses</a>
+        <a href="#">Jeans & Jeggings</a>
+        <a href="#">Pants & Trousers</a>
+        <a href="#">Skirts</a>
+      </div> 
+
+      <div class="dropdown-column">
+        <a href="#">Western Wear</a>
+        <a href="#">Tops & Tees</a>
+        <a href="#">Dresses</a>
+        <a href="#">Jeans & Jeggings</a>
+       
+      </div> 
+    </div>
+  </div>
+  
+    <div class="dropp"><button class="dropbtn">Clothing</button> 
+      <div class="dropp-content"> 
+        <div class="dropp-column">
+                <a href="#">BestSellers</a>
+                <a href="#">Top Saved Styles</a>
+                <a href="#">New in</a>
+                <a href="#">Jackets & Coats</a>
+                <a href="#">Shirts</a>
+                <a href="#">Jeans</a>
+                <a href=""> T-Shirts & Vests</a>
+                <a href="#">Hoodies & Sweatshirts </a>
+                <a href="#">Co-ords</a>
+                <a href="#">Cargo Trousers</a>
+                <a href="#">Designer</a>
+                <a href="#">Loungewear</a>
+                <a href="#">Multipacks</a>
+                <a href=""> Sportswear</a>
+    
+    
+        </div>
+
+        <div class="dropdown-column">
+          <a href="#">Western Wear</a>
+          <a href="#">Tops & Tees</a>
+          <a href="#">Dresses</a>
+          <a href="#">Jeans & Jeggings</a>
+          <a href="#">Pants & Trousers</a>
+          <a href="#">Skirts</a>
+        </div> 
+        <div class="dropdown-column">
+          <a href="#">Western Wear</a>
+          <a href="#">Tops & Tees</a>
+          <a href="#">Dresses</a>
+          <a href="#">Jeans & Jeggings</a>
+         
+        </div> 
+      </div></div>
+
+      <div class="dropp"><button class="dropbtn">Shoes</button> 
+        <div class="dropp-content"> 
+          <div class="dropp-column">
+                  <a  href="#">BestSellers</a>
+                  <a href="#">Veiw all</a>
+                  <a href="#">New in</a>
+                  <a href="#">Trainers</a>
+                  <a href="#">Boots</a>
+                  <a href="#">Loafers</a>
+                  <a href=""> Sandals</a>
+                  <a href="#">Shoes</a>
+                  <a href="#">Sliders & Flipflops</a>
+                  <a href="#">Slippers</a>
+                  <a href="#">Socks</a>
+                  <a href="#">Sports Traner</a>
+                  <a href="#">Running Shoes</a>
+                
+      
+          </div>
+
+          <div class="dropdown-column">
+            <a href="#">Western Wear</a>
+            <a href="#">Tops & Tees</a>
+            <a href="#">Dresses</a>
+            <a href="#">Jeans & Jeggings</a>
+            <a href="#">Pants & Trousers</a>
+            <a href="#">Skirts</a>
+          </div> 
+          <div class="dropdown-column">
+            <a href="#">Western Wear</a>
+            <a href="#">Tops & Tees</a>
+            <a href="#">Dresses</a>
+            <a href="#">Jeans & Jeggings</a>
+            <a href="#">Pants & Trousers</a>
+            <a href="#">Skirts</a>
+          </div> 
+        </div></div>
+
+
+
+        <div class="dropp"><button class="dropbtn">Sportswear</button> 
+          <div class="dropp-content"> 
+            <div class="dropp-column">
+                    <a href="#">View all</a>
+                    <a href="#">New in</a>
+                    <a href="#">Trainers</a>
+                    <a href="#">Shorts</a>
+                    <a href="#">Tops</a>
+                    <a href="#">Accessories</a>
+                    <a href="#">Hoodies & Sweatshirts</a>
+                    <a href="#">Jackets</a>
+                    <a href="#">Trousers & Tights</a>
+        
+            </div>
+
+            <div class="dropdown-column">
+              <a href="#">Western Wear</a>
+              <a href="#">Tops & Tees</a>
+              <a href="#">Dresses</a>
+              <a href="#">Jeans & Jeggings</a>
+              
+            </div> 
+            <div class="dropdown-column">
+              <a href="#">Western Wear</a>
+              <a href="#">Tops & Tees</a>
+              <a href="#">Dresses</a>
+              <a href="#">Jeans & Jeggings</a>
+              <a href="#">Pants & Trousers</a>
+              <a href="#">Skirts</a>
+            </div> 
+          </div></div>
+
+
+          <div class="dropp"><button class="dropbtn">Accesories</button> 
+            <div class="dropp-content"> 
+              <div class="dropp-column">
+                      <a href="#">BestSellers</a>
+                      <a href="#">View all</a>
+                      <a href="#">New in</a>
+                      <a href="#">Scarves</a>
+                      <a href="#">Beanies</a>
+                      <a href="#">Caps & Hats</a>
+                      <a href="#">Gloves</a>
+                      <a href="#">Beltsr</a>
+                      <a href="#">Gifts</a>
+                      <a href="#">Sacks</a>
+                      <a href="#">Sunglasses</a>
+                      <a href="#">ties</a>
+                      <a href="#">Necklaces</a>
+          
+              </div>
+
+              <div class="dropdown-column">
+                <a href="#">Western Wear</a>
+                <a href="#">Tops & Tees</a>
+                <a href="#">Dresses</a>
+                <a href="#">Jeans & Jeggings</a>
+                <a href="#">Pants & Trousers</a>
+                <a href="#">Skirts</a>
+              </div> 
+
+              <div class="dropdown-column">
+                <a href="#">Western Wear</a>
+                <a href="#">Tops & Tees</a>
+                <a href="#">Dresses</a>
+                <a href="#">Jeans & Jeggings</a>
+                <a href="#">Pants & Trousers</a>
+                <a href="#">Skirts</a>
+              </div> 
+            </div></div>
+
+            <div class="dropp"><button class="dropbtn">Spring</button> 
+              <div class="dropp-content"> 
+                <div class="dropp-column">
+                        <a href="#">BestSellers</a>
+                        <a href="#">Casual Shirts</a>
+                        <a href="#">Cargos</a>
+                        <a href="#">T-Shirts & Vests</a>
+                        <a href="#">Hoodies & Sweatshirts</a>
+                        <a href="#">Light Layers</a>
+                        <a href="">Shorts</a>
+            
+                </div>
+
+                <div class="dropdown-column">
+                  <a href="#">Western Wear</a>
+                  <a href="#">Tops & Tees</a>
+                  <a href="#">Dresses</a>
+                  <a href="#">Jeans & Jeggings</a>
+                  <a href="#">Pants & Trousers</a>
+                  <a href="#">Skirts</a>
+                </div> 
+                <div class="dropdown-column">
+                  <a href="#">Western Wear</a>
+                  <a href="#">Tops & Tees</a>
+                 
+                 
+                </div> 
+              </div></div>
+
+              <div class="dropp"><button class="dropbtn" >Jeans</button> 
+                <div class="dropp-content"> 
+                  <div class="dropp-column">
+                          <a href="#">BestSellers</a>
+                          <a href="#">Wide-leg Jeans</a>
+                          <a href="#">Tapered Jeans</a>
+                          <a href="#">Skinny Jeans</a>
+                          <a href="#">Ripped Jeans</a>
+                          <a href="#">Slim Jeans</a>
+                          <a href=""> Straight Jeans</a>
+              
+                  </div>
+
+
+                  
+                </div></div>
+
+                <div class="dropp"><button class="dropbtn">Brands</button> 
+                  <div class="dropp-content"> 
+                    <div class="dropp-column">
+                            <a href="#">Top-Brands</a>
+                            <a href="#">Adidas</a>
+                            <a href="#">Calvien Klein</a>
+                            <a href="#">Carhartt WIP</a>
+                            <a href="#">New Balance</a>
+                            <a href="#">New Era</a>
+                            <a href="#"> On running</a>
+                
+                    </div>
+                  </div></div>
+
+              
+                    <div class="dropp"><button class="dropbtn">Outlets</button> 
+                      <div  class="dropp-content"> 
+                        <div  class="dropp-column">
+                           <a href="#"> Adidas</a>
+                           <a href="#"> Calvien Klein</a>
+                           <a href="#"> Adidas</a>
+                           <a href="#"> New-Era</a>
+                           <a href="#"> Adidas</a>
+                           <a href="#"> Carhatt WTP</a>
+                      
+                        </div>
+                      </div></div>
+                    </div>
+
+     
    </div>
    <div id="offer1">
      <div id="coupan1">
@@ -258,36 +687,36 @@ body{
    </div>
    <a href="warm.html">
    <div id="main">
-     <img width="100%" src="	https://content.asos-media.com/-/media/homepages/mw/2022/feb/14/hero/mw_sugar_rave_desktop_hero_1258x600.jpg" alt="clothes">
+     <img width="100%" src="./image/Screenshot (46).png" alt="clothes">
    </div>
    </a>
    <div id="brand">
      <a href="looks.html">
      <div id="logon">
-       <img width="100%" src="https://content.asos-media.com/-/media/homepages/mw/2022/feb/14/moments/mw_logos_actual_moment_870x1110.jpg" alt="logomania">
-       <h3>LOGOMANIA</h3>
-       <p>Ft.ASOS Actual</p>
+       <img width="100%" src="./image/Screenshot (49).png" alt="logomania">
+       <h3 style="color: black;">LOGOMANIA</h3>
+       <p style="color: black;">Ft.ASOS Actual</p>
      </div>
      </a>
      <a href="tommy.html">
      <div id="tommy">
-      <img width="100%" src="https://content.asos-media.com/-/media/homepages/mw/2022/feb/14/moments/mw_tommy_jeans_870x1110.jpg" alt="Tommy">
-      <h3>TOMMY HILFIGER</h3>
-      <p>Dungrees, denim & more</p>
+      <img width="100%" src="./image/Screenshot (54).png" alt="Tommy">
+      <h3 style="color: black;">TOMMY HILFIGER</h3>
+      <p style="color: black;">Dungrees, denim & more</p>
      </div>
      </a>
      <a href="calvin.html">
      <div id="calvin">
-      <img width="100%" src="https://content.asos-media.com/-/media/homepages/mw/2022/feb/14/moments/mw_calvin_klein_jeans_moment_870x1110.jpg" alt="calvin">
-      <h3>CALVIN KLEIN JEANS</h3>
-      <p>What Your Wardrob Wants</p>
+      <img width="100%" src="./image/Screenshot (55).png" alt="calvin">
+      <h3 style="color: black;">CALVIN KLEIN JEANS</h3>
+      <p style="color: black;">What Your Wardrob Wants</p>
      </div>
      </a>
      <a href="adidas.html">
      <div id="adidas">
-      <img width="100%" src="https://content.asos-media.com/-/media/homepages/mw/2022/feb/14/moments/mw_adi_tonal_moment_870x1110.jpg" alt="adidas">
-      <h3>ADIDAS</h3>
-      <p>Your tonal top-up</p>
+      <img width="100%" src="./image/Screenshot (56).png" alt="adidas">
+      <h3 style="color: black;">ADIDAS</h3>
+      <p style="color: black;">Your tonal top-up</p>
      </div>
      </a>
    </div>
@@ -299,12 +728,12 @@ body{
    </div>
    <h2 class="incenter">TRENDING BRANDS</h2>
    <div id="allbrands">
-     <img width="80%" height="200px" src="https://content.asos-media.com/-/media/homepages/unisex/brands-logos/256x256/tommy-hilfiger-hp-logos-256x256.jpg" alt="tommylogo">
-     <img  width="80%" height="200px" src="https://content.asos-media.com/-/media/homepages/unisex/brands-logos/256x256/north-face.png" alt="north-face">
-     <img width="80%" height="200px" src="https://content.asos-media.com/-/media/homepages/unisex/brands-logos/256x256/nike-hp-logos-256x256.jpg" alt="nike">
-     <img width="80%" height="200px" src="https://content.asos-media.com/-/media/homepages/unisex/brands-logos/256x256/carhartt-hp-logos-256x256.jpg" alt="carhartt">
-     <img width="80%"height="200px" src="https://content.asos-media.com/-/media/homepages/unisex/brands-logos/256x256/ellesse-hp-logos-256x256.jpg" alt="ellese">
-     <img width="80%" height="200px" src="https://content.asos-media.com/-/media/homepages/unisex/brands-logos/256x256/dr-martens-hp-logos-256x256.jpg" alt="martens">
+     <img width="80%" height="200px" src="./image/Screenshot (57).png" alt="tommylogo">
+     <img  width="80%" height="200px" src="./image/Screenshot (63).png" alt="north-face">
+     <img width="80%" height="200px" src="./image/Screenshot (64).png" alt="nike">
+     <img width="80%" height="200px" src="./image/Screenshot (65).png" alt="carhartt">
+     <img width="80%"height="200px" src="./image/Screenshot (66).png" alt="ellese">
+     <img width="80%" height="200px" src="./image/Screenshot (67).png" alt="martens">
    </div>
    <div id="footer"></div>
    <div id="footer">
@@ -317,42 +746,34 @@ body{
       </div>
     <div id="all_details1">
         <div id="details1">
-            <h3>HELP & INFORMATION</h3>
-            <p>Help</p>
-            <p>Track order</p>
-            <p>Delivery & returns</p>
+           <a href=""></a> <h3>HELP & INFORMATION</h3></a> 
+           <a href=""></a> <p>Help</p></a> 
+           <a href=""></a> <p>Track order</p></a> 
+           <a href=""></a> <p>Delivery & returns</p></a> 
         </div>
         <div id="details1">
-            <h3>ABOUT WEAR</h3>
-            <p>About us</p>
-            <p>Careers at WEAR</p>
-            <p>Corporate responsibility</p>
-            <p>Invester's site</p>
+           <a href=""></a> <h3>ABOUT WEAR</h3></a> 
+           <a href=""></a> <p>About us</p></a> 
+           <a href=""></a>  <p>Careers at WEAR</p></a> 
+           <a href=""></a> <p>Corporate responsibility</p></a> 
+           <a href=""></a> <p>Invester's site</p></a> 
         </div>
         <div id="details1">
-            <h3>MORE FROM WEAR</h3>
-            <p>Mobile & WEAR Apps</p>
-            <p>WEAR Marketplace</p>
-            <p>Gift vouchers</p>
-            <p>Black Friday</p>
+           <a href=""></a> <h3>MORE FROM WEAR</h3></a> 
+          <a href=""></a>  <p>Mobile & WEAR Apps</p></a> 
+           <a href=""></a> <p>WEAR Marketplace</p></a> 
+           <a href=""></a> <p>Gift vouchers</p></a> 
+           <a href=""></a> <p>Black Friday</p></a> 
         </div>
         <div id="details1">
-            <h3>SHOPPING FROM:</h3>
-            <P>You are in INDIA</P>
+           <a href=""></a> <h3>SHOPPING FROM:</h3></a> 
+           <a href=""></a> <P>You are in INDIA</P></a> 
         </div>
     </div>
     <div id="about1">
-       <p id="year">2022 WEAR</p>
-       <p id="policy">Privacy & Cookies | Ts&Cs | Accesbility</p>
+      <a href=""></a> <p id="year">2022 WEAR</p></a> 
+      <a href=""></a> <p id="policy">Privacy & Cookies | Ts&Cs | Accesbility</p></a> 
     </div>
 </div>
 </body>
 </html>
-<script type="module">
-    import {navbar} from "./components/navbar.js";
-    var nav = document.querySelector("#navbar");
-    nav.innerHTML = navbar();
-    import {footer} from "./components/footer.js";
-    var foot = document.querySelector("#footer");
-    foot.innerHTML = footer();
-</script>
