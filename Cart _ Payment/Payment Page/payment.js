@@ -77,21 +77,21 @@ function appendtodom(c) {
   let patchwork = {
     orderCost: total,
   };
-  patching(patchwork);
+  // patching(patchwork);
 }
 
-function patching(t) {
-  fetch(`https://64230bad001cb9fc2036bd2f.mockapi.io/products/1`, {
-    method: "PATCH",
-    headers: {
-      "Content-type": "application/json",
-    },
-    body: JSON.stringify(t),
-  })
-    .then((res) => {
-      return res.json();
-    })
-    .then((data) => {
-      console.log(data);
-    });
-}
+// function patching(t) {
+//   fetch(`https://64230bad001cb9fc2036bd2f.mockapi.io/products/1`, {
+//     method: "PATCH",
+//     headers: {
+//       "Content-type": "application/json",
+//     },
+//     body: JSON.stringify(t),
+//   })
+//     .then((res) => {
+//       return res.json();
+//     })
+//     .then((data) => {
+//       console.log(data);
+//     });
+// }
