@@ -98,7 +98,6 @@ function displayCardList(itemData) {
       let editBox = card.querySelector('.edit-item');
       let editForm = card.querySelector('.edit-item > form');
       let sizeInps = card.querySelectorAll('.sizeInp');
-
       for (let i = 0; i < sizeInps.length; i++) {
          sizeInps[i].addEventListener('change', function () {
             if (sizeInps[i].className == 'sizeInp') {
@@ -174,6 +173,7 @@ async function updateItem(editForm, itemID) {
    });
    let resItem = await fetch(`${baseUrl}/products`);
    OFFItemData = await resItem.json();
+   alert('Item Updated');
    displayCardList(OFFItemData);
 }
 
@@ -183,31 +183,42 @@ async function deleteItem(itemID) {
    let resItem = await fetch(`${baseUrl}/products`);
    OFFItemData = await resItem.json();
    displayCardList(OFFItemData);
+   alert('item Deleted');
 }
 
 // Add Item //////////////////////
-let addItemBtn = document.querySelector('.add-btn');
-addItemBtn.addEventListener('click', function () {
-   // addIetm();
+let addItemForm = document.querySelector('.add-item > form');
+addItemForm.addEventListener('submit', function (e) {
+   e.preventDefault();
+   addIetm();
 });
 
-let addForm = document.querySelector('');
-
+let addForm = document.querySelector('.add-item');
+let sizeInps = addForm.querySelectorAll('.sizeInp');
+for (let i = 0; i < sizeInps.length; i++) {
+   sizeInps[i].addEventListener('change', function () {
+      if (sizeInps[i].className == 'sizeInp') {
+         sizeInps[i].className = 'sizeInp checked';
+      } else {
+         sizeInps[i].className = 'sizeInp';
+      }
+   });
+}
 async function addIetm() {
-   let nameInp = editForm.querySelector('.nameInp');
-   let priceInp = editForm.querySelector('.priceInp');
-   let discountInp = editForm.querySelector('.discountInp');
-   let typeInp = editForm.querySelector('.typeInp');
-   let categoryInp = editForm.querySelector('.categoryInp');
-   let colorInp = editForm.querySelector('.colorInp');
-   let mImg = editForm.querySelector('.main-imgInp');
-   let oImg1 = editForm.querySelector('.other-imgInp-1');
-   let oImg2 = editForm.querySelector('.other-imgInp-2');
-   let oImg3 = editForm.querySelector('.other-imgInp-3');
-   let productDetailsInp = editForm.querySelector('.product-detailsInp');
-   let brandDetailsInp = editForm.querySelector('.brand-detailsInp');
+   let nameInp = addForm.querySelector('.nameInp');
+   let priceInp = addForm.querySelector('.priceInp');
+   let discountInp = addForm.querySelector('.discountInp');
+   let typeInp = addForm.querySelector('.typeInp');
+   let categoryInp = addForm.querySelector('.categoryInp');
+   let colorInp = addForm.querySelector('.colorInp');
+   let mImg = addForm.querySelector('.main-imgInp');
+   let oImg1 = addForm.querySelector('.other-imgInp-1');
+   let oImg2 = addForm.querySelector('.other-imgInp-2');
+   let oImg3 = addForm.querySelector('.other-imgInp-3');
+   let productDetailsInp = addForm.querySelector('.product-detailsInp');
+   let brandDetailsInp = addForm.querySelector('.brand-detailsInp');
 
-   let sizeInp = editForm.querySelectorAll('.sizeInp > input');
+   let sizeInp = addForm.querySelectorAll('.sizeInp > input');
    let sizeArr = [];
    for (let i = 0; i < sizeInp.length; i++) {
       if (sizeInp[i].checked) sizeArr.push(sizeInp[i].value);
@@ -230,13 +241,14 @@ async function addIetm() {
       },
    };
 
-   await fetch(`${baseUrl}/products/${itemID}`, {
-      method: 'PUT',
+   await fetch(`${baseUrl}/products`, {
+      method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(itemObj),
    });
    let resItem = await fetch(`${baseUrl}/products`);
    OFFItemData = await resItem.json();
+   alert('Item Added');
    displayCardList(OFFItemData);
 }
 // Get Card //////////////////////
@@ -390,7 +402,59 @@ Item</span>
 navBtn.customers.addEventListener('click', function (e) {
    controlBtnActiveState(e.target);
    controlBoxVisibality(e.target.dataset.panel);
+   displayUserList();
 });
+
+// Display UserList
+async function displayUserList() {
+   let res = await fetch(`${baseUrl}/users`);
+   let data = await res.json();
+   displayUserCards(data);
+}
+let userCardList = document.querySelector('.user-list');
+function displayUserCards(data) {
+   userCardList.innerHTML = '';
+   data.forEach(function (user) {
+      let card = getUserCard(user);
+      userCardList.append(card);
+   });
+}
+function getUserCard(user) {
+   let card = document.createElement('div');
+   card.className = 'user-card';
+   card.innerHTML = `
+<div class="info-box">
+<table>
+<tr>
+<td>ID</td>
+<td>${user.id}</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>${user.name}</td>
+</tr>
+<tr>
+<td>Email</td>
+<td>${user.email}</td>
+</tr>
+<tr>
+<td>Address</td>
+<td>${user.address}</td>
+</tr>
+<tr>
+<td>Phone No.</td>
+<td>${user.phoneNo}</td>
+</tr>
+<tr>
+<td>Password</td>
+<td>${user.password}</td>
+</tr>
+</table>
+</div>
+   `;
+   return card;
+}
+
 navBtn.orders.addEventListener('click', function (e) {
    controlBtnActiveState(e.target);
    controlBoxVisibality(e.target.dataset.panel);
