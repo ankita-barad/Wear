@@ -31,7 +31,7 @@ form.addEventListener("submit", function (e) {
   fetchandpost(obj);
 });
 
-async function fetchandpost(obj) {
+function fetchandpost(obj) {
   fetch(`https://64230bad001cb9fc2036bd2f.mockapi.io/users`, {
     method: "POST",
     headers: {
