@@ -501,7 +501,7 @@
                 <div class="col-3">
                     <div class="input-field">
                         <label>Type</label>
-                        <select class="type">
+                        <select class="typeInp">
                             <option value="">--select type--</option>
                             <option value="jeans">Jeans</option>
                             <option value="sneakers">Sneakers</option>
@@ -513,14 +513,14 @@
                     </div>
                     <div class="input-field">
                         <label>Discount percentage</label>
-                        <input class="priceInp" type="number" placeholder="discount percentage">
+                        <input class="discountInp" type="number" placeholder="discount percentage">
                     </div>
                 </div>
                 <div class="col-2">
                     <div class="col-2">
                         <div class="input-field">
                             <label>Category</label>
-                            <select class="caregory">
+                            <select class="categoryInp">
                                 <option value="">--select category--</option>
                                 <option value="men">Men</option>
                                 <option value="women">Women</option>
@@ -534,23 +534,23 @@
                     <div class="input-field">
                         <label>Sizes</label>
                         <div class="check-container">
-                            <label class="size-inp checked"><input value="US-0" type="checkbox">
-                                <span>US-0</span>
+                            <label class="sizeInp"><input value="US-1" type="checkbox">
+                                <span>US-1</span>
                             </label>
-                            <label class="size-inp"><input value="US-2" type="checkbox"> <span>US-2</span>
+                            <label class="sizeInp"><input value="US-2" type="checkbox"> <span>US-2</span>
                             </label>
-                            <label class="size-inp"><input value="US-4" type="checkbox"> <span>US-4</span>
+                            <label class="sizeInp"><input value="US-4" type="checkbox"> <span>US-4</span>
                             </label>
-                            <label class="size-inp checked"><input value="US-6" type="checkbox">
+                            <label class="sizeInp"><input value="US-6" type="checkbox">
                                 <span>US-6</span>
                             </label>
-                            <label class="size-inp checked"><input value="US-8" type="checkbox">
+                            <label class="sizeInp"><input value="US-8" type="checkbox">
                                 <span>US-8</span>
                             </label>
-                            <label class="size-inp checked"><input value="US-10" type="checkbox">
+                            <label class="sizeInp"><input value="US-10" type="checkbox">
                                 <span>US-10</span>
                             </label>
-                            <label class="size-inp checked"><input value="US-12" type="checkbox">
+                            <label class="sizeInp"><input value="US-12" type="checkbox">
                                 <span>US-12</span>
                             </label>
                         </div>
@@ -574,17 +574,17 @@
                 </div>
                 <div class="input-field">
                     <label>Product Details</label>
-                    <textarea class="product-details" cols="100" rows="2"></textarea>
+                    <textarea class="product-detailsInp" cols="100" rows="2"></textarea>
                 </div>
                 <div class="input-field">
                     <label>Brand Details</label>
-                    <textarea class="brand-details" cols="100" rows="2"></textarea>
+                    <textarea class="brand-detailsInp" cols="100" rows="2"></textarea>
                 </div>
-
-                <button class="btn-sm add-btn"><i class="ri-add-line"></i> <span>Add Item</span>
+                <button class="btn-sm add-btn">
+                    <i class="ri-refresh-line"></i> <span>Add
+                        Item</span>
                 </button>
             </form>
-
         </div>
     </div>
 

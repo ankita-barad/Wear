@@ -88,37 +88,162 @@ navBtn.allItems.addEventListener('click', function (e) {
 
 // Display Card //////////////////
 
-let editCardBtns = document.getElementsByClassName('edit-btn');
-let editCardForms = document.getElementsByClassName('edit-item');
-let updataCardBtns = document.getElementsByClassName('update-btn');
-
 let cardList = document.querySelector('.card-list');
 function displayCardList(itemData) {
    cardList.innerHTML = ``;
    itemData.forEach(function (item) {
       let card = getCard(item);
-      cardList.append(card);
-   });
+      let deleteBtn = card.querySelector('.delete-btn');
+      let editBtn = card.querySelector('.edit-btn');
+      let editBox = card.querySelector('.edit-item');
+      let editForm = card.querySelector('.edit-item > form');
+      let sizeInps = card.querySelectorAll('.sizeInp');
 
-   for (let i = 0; i < editCardBtns.length; i++) {
-      editCardBtns[i].addEventListener('click', function () {
-         if (editCardForms[i].className == 'edit-item') {
-            editCardForms[i].className = 'edit-item hide';
+      for (let i = 0; i < sizeInps.length; i++) {
+         sizeInps[i].addEventListener('change', function () {
+            if (sizeInps[i].className == 'sizeInp') {
+               sizeInps[i].className = 'sizeInp checked';
+            } else {
+               sizeInps[i].className = 'sizeInp';
+            }
+         });
+      }
+
+      editBtn.addEventListener('click', function () {
+         if (editBox.className == 'edit-item') {
+            editBox.className = 'edit-item hide';
          } else {
-            editCardForms[i].className = 'edit-item';
+            editBox.className = 'edit-item';
          }
       });
-      updataCardBtns[i].addEventListener('click', function (e) {
+
+      editForm.addEventListener('submit', async function (e) {
          e.preventDefault();
-         updateCard(updataCardBtns[i].dataset.id);
+         updateItem(editForm, card.dataset.id);
       });
-   }
+
+      deleteBtn.addEventListener('click', async function () {
+         deleteItem(card.dataset.id);
+      });
+      cardList.append(card);
+   });
 }
 
+// Update Item //////////////////////////
+async function updateItem(editForm, itemID) {
+   let nameInp = editForm.querySelector('.nameInp');
+   let priceInp = editForm.querySelector('.priceInp');
+   let discountInp = editForm.querySelector('.discountInp');
+   let typeInp = editForm.querySelector('.typeInp');
+   let categoryInp = editForm.querySelector('.categoryInp');
+   let colorInp = editForm.querySelector('.colorInp');
+   let mImg = editForm.querySelector('.main-imgInp');
+   let oImg1 = editForm.querySelector('.other-imgInp-1');
+   let oImg2 = editForm.querySelector('.other-imgInp-2');
+   let oImg3 = editForm.querySelector('.other-imgInp-3');
+   let productDetailsInp = editForm.querySelector('.product-detailsInp');
+   let brandDetailsInp = editForm.querySelector('.brand-detailsInp');
+
+   let sizeInp = editForm.querySelectorAll('.sizeInp > input');
+   let sizeArr = [];
+   for (let i = 0; i < sizeInp.length; i++) {
+      if (sizeInp[i].checked) sizeArr.push(sizeInp[i].value);
+   }
+
+   let itemObj = {
+      title: nameInp.value,
+      price: priceInp.value,
+      gender: categoryInp.value,
+      productType: typeInp.value,
+      discountPercentage: discountInp.value,
+      color: colorInp.value,
+      sizes: sizeArr,
+      rating: [2.9, 89],
+      productDetails: productDetailsInp.value,
+      brandDetails: brandDetailsInp.value,
+      images: {
+         mainImg: mImg.value,
+         otherImg: [oImg1.value, oImg2.value, oImg3.value],
+      },
+   };
+
+   await fetch(`${baseUrl}/products/${itemID}`, {
+      method: 'PUT',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(itemObj),
+   });
+   let resItem = await fetch(`${baseUrl}/products`);
+   OFFItemData = await resItem.json();
+   displayCardList(OFFItemData);
+}
+
+// Delete Item ////////////////////
+async function deleteItem(itemID) {
+   await fetch(`${baseUrl}/products/${itemID}`, { method: 'DELETE' });
+   let resItem = await fetch(`${baseUrl}/products`);
+   OFFItemData = await resItem.json();
+   displayCardList(OFFItemData);
+}
+
+// Add Item //////////////////////
+let addItemBtn = document.querySelector('.add-btn');
+addItemBtn.addEventListener('click', function () {
+   // addIetm();
+});
+
+let addForm = document.querySelector('');
+
+async function addIetm() {
+   let nameInp = editForm.querySelector('.nameInp');
+   let priceInp = editForm.querySelector('.priceInp');
+   let discountInp = editForm.querySelector('.discountInp');
+   let typeInp = editForm.querySelector('.typeInp');
+   let categoryInp = editForm.querySelector('.categoryInp');
+   let colorInp = editForm.querySelector('.colorInp');
+   let mImg = editForm.querySelector('.main-imgInp');
+   let oImg1 = editForm.querySelector('.other-imgInp-1');
+   let oImg2 = editForm.querySelector('.other-imgInp-2');
+   let oImg3 = editForm.querySelector('.other-imgInp-3');
+   let productDetailsInp = editForm.querySelector('.product-detailsInp');
+   let brandDetailsInp = editForm.querySelector('.brand-detailsInp');
+
+   let sizeInp = editForm.querySelectorAll('.sizeInp > input');
+   let sizeArr = [];
+   for (let i = 0; i < sizeInp.length; i++) {
+      if (sizeInp[i].checked) sizeArr.push(sizeInp[i].value);
+   }
+
+   let itemObj = {
+      title: nameInp.value,
+      price: priceInp.value,
+      gender: categoryInp.value,
+      productType: typeInp.value,
+      discountPercentage: discountInp.value,
+      color: colorInp.value,
+      sizes: sizeArr,
+      rating: [2.9, 89],
+      productDetails: productDetailsInp.value,
+      brandDetails: brandDetailsInp.value,
+      images: {
+         mainImg: mImg.value,
+         otherImg: [oImg1.value, oImg2.value, oImg3.value],
+      },
+   };
+
+   await fetch(`${baseUrl}/products/${itemID}`, {
+      method: 'PUT',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(itemObj),
+   });
+   let resItem = await fetch(`${baseUrl}/products`);
+   OFFItemData = await resItem.json();
+   displayCardList(OFFItemData);
+}
 // Get Card //////////////////////
 
 function getCard(item) {
    let card = document.createElement('div');
+   card.setAttribute('data-id', `${item.id}`);
    card.classList.add('item-card');
    card.innerHTML = `
 <div class="item-details">
@@ -191,7 +316,7 @@ Item</span> </button>
 <div class="col-2">
 <div class="input-field">
 <label>Category</label>
-<select class="caregoryInp">
+<select class="categoryInp">
 <option value="">--select category--</option>
 <option value="men">Men</option>
 <option value="women">Women</option>
@@ -205,23 +330,23 @@ Item</span> </button>
 <div class="input-field">
 <label>Sizes</label>
 <div class="check-container">
-<label class="size-inp checked"><input value="US-0" type="checkbox">
-<span>US-0</span>
+<label class="sizeInp"><input value="US-1" type="checkbox">
+<span>US-1</span>
 </label>
-<label class="size-inp"><input value="US-2" type="checkbox"> <span>US-2</span>
+<label class="sizeInp"><input value="US-2" type="checkbox"> <span>US-2</span>
 </label>
-<label class="size-inp"><input value="US-4" type="checkbox"> <span>US-4</span>
+<label class="sizeInp"><input value="US-4" type="checkbox"> <span>US-4</span>
 </label>
-<label class="size-inp checked"><input value="US-6" type="checkbox">
+<label class="sizeInp"><input value="US-6" type="checkbox">
 <span>US-6</span>
 </label>
-<label class="size-inp checked"><input value="US-8" type="checkbox">
+<label class="sizeInp"><input value="US-8" type="checkbox">
 <span>US-8</span>
 </label>
-<label class="size-inp checked"><input value="US-10" type="checkbox">
+<label class="sizeInp"><input value="US-10" type="checkbox">
 <span>US-10</span>
 </label>
-<label class="size-inp checked"><input value="US-12" type="checkbox">
+<label class="sizeInp"><input value="US-12" type="checkbox">
 <span>US-12</span>
 </label>
 </div>
@@ -251,7 +376,7 @@ Item</span> </button>
 <label>Brand Details</label>
 <textarea class="brand-detailsInp" cols="100" rows="2"></textarea>
 </div>
-<button class="btn-sm update-btn" data-id = ${item.id}>
+<button class="btn-sm update-btn">
 <i class="ri-refresh-line"></i> <span>Update
 Item</span>
 </button>
@@ -260,10 +385,6 @@ Item</span>
 `;
    return card;
 }
-
-// Update Card /////////////////////
-
-async function updateCard(id) {}
 
 // Customers ////////////////////
 navBtn.customers.addEventListener('click', function (e) {

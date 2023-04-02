@@ -479,10 +479,16 @@ PRODUCTS EDIT
    font-size: inherit;
 }
 
-.checked {
+.sizeInp {
    display: flex;
    align-items: center;
-   padding: 0 0.3rem;
+   padding: 0 0.25rem;
+   border: 1px solid #1c7fd67c;
+   color: #026ecc;
+   transition: var(--trans);
+}
+
+.checked {
    color: white;
    background-color: #026ecc;
 }
