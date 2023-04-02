@@ -5,7 +5,12 @@ let nos = document.getElementById("nos");
 let mail = document.getElementById("mail");
 let home = document.getElementById("home");
 let userid = +localStorage.getItem("user");
+let buy = document.getElementById("buy");
 console.log(userid);
+buy.addEventListener("click", function (e) {
+  alert("payment successfull");
+  window.open("/index.html", "_self");
+});
 window.addEventListener("load", function (e) {
   e.preventDefault();
 
