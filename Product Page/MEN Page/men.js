@@ -7,7 +7,7 @@ let user = localStorage.getItem("user");
 window.onload = () => {
   fetchData(url);
   fetchUserData();
-  localStorage.setItem("user", 12);
+  localStorage.setItem("user", 2);
 };
 
 async function fetchUserData() {
