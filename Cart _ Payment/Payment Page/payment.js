@@ -80,6 +80,7 @@ function appendtodom(c) {
   sub.innerText = `$ ${total}`;
   tot.innerText = `$ ${total}`;
   let patchwork = {
+    
     orderCost: total,
   };
   // patching(patchwork);
