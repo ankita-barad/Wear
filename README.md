@@ -1,7 +1,8 @@
-# Wear (asos.com clone)
+[Wear.com](https://clever-rolypoly-a2bca2.netlify.app/)
 
 ##Project Description
-Wear is a E-commerce Clothing website
+
+Wear is an E-commerce Clothing website
 
 Deployed Link: https://clever-rolypoly-a2bca2.netlify.app/
 
